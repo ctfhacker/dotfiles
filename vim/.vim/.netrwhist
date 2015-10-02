@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/ctf/workspace/binjitsu/binjitsu.egg-info'
+let g:netrw_dirhist_2='/home/ctf/ctfs/openctf-2015/runic'
+let g:netrw_dirhist_3='/home/ctf/ctfs/openctf-2015/sigil'
+let g:netrw_dirhist_4='/home/ctf/ctfs/openctf-2015/runic'
