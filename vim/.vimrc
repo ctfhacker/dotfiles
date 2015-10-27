@@ -3,6 +3,12 @@ syntax enable
 set background=dark
 colorscheme solarized
 set nu
+let mapleader = ','
+
+" CtrlP
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 
 set noswapfile
 set nobackup
@@ -49,6 +55,12 @@ set list listchars=tab:>-,trail:.,extends:>
 
 set laststatus=2
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+
+" Enable basic mouse behavior such as resizing buffers.
+set mouse=a
+if exists('$TMUX')  " Support resizing in tmux
+    set ttymouse=xterm2
+endif
 
 highlight BadWhitespace ctermbg=red guibg=red
 
@@ -105,3 +117,5 @@ function! HasPaste()
 endfunction
 
 highlight WhiteOnRed guifg=white guibg=red
+
+execute pathogen#infect()
