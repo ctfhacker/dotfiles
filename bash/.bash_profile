@@ -16,4 +16,6 @@ alias del=rm
 alias dir=ls
 alias findstr=grep
 
-alias tmux='TERM=screen-256color tmux'
+alias tmux='export TERM=screen-256color; tmux -2'
+
+source ~/.bashrc
