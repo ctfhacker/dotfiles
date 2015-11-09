@@ -18,4 +18,8 @@ alias findstr=grep
 
 alias tmux='export TERM=screen-256color; tmux -2'
 
+alias ips='ip a'
+
 source ~/.bashrc
+
+

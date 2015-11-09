@@ -21,6 +21,15 @@ noremap k gk
 noremap gj j
 noremap gk k
 
+" Remap H and L (top, bottom of screen to left and right end of line)
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L g_
+
+" More logical Y (defaul was alias for yy)
+nnoremap Y y$
+
 nnoremap <left> :wa!<cr>:tabp<cr>
 nnoremap <right> :wa!<cr>:tabn<cr>
 
