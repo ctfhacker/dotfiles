@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/coryduplantis/workspace/ctf-framework/api'
 let g:netrw_dirhist_2='/Users/coryduplantis/workspace/ctf-framework/api/api'
 let g:netrw_dirhist_3='/Users/coryduplantis/workspace/boxly'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/coryduplantis/workspace/boxly'
 let g:netrw_dirhist_6='/Users/coryduplantis/workspace/ctf-framework/stanford-ctf/the-quest/the-quest-bonus'
 let g:netrw_dirhist_7='/Users/coryduplantis/workspace/ctf-framework/stanford-ctf/crypto/crypto-square'
 let g:netrw_dirhist_8='/Users/coryduplantis/workspace/ctf-framework/stanford-ctf/the-quest/the-quest-3/grader'
+let g:netrw_dirhist_9='/Users/coryduplantis/workspace/dotfiles/vim/.vim'

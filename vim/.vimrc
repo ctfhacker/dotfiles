@@ -5,6 +5,10 @@ colorscheme solarized
 set nu
 let mapleader = ','
 
+" Unite
+nnoremap <C-k> :Unite -start-insert file_rec buffer<CR>
+nnoremap <C-l> :Unite -start-insert line<CR>
+
 " CtrlP
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>t :CtrlP<CR>
@@ -126,5 +130,6 @@ function! HasPaste()
 endfunction
 
 highlight WhiteOnRed guifg=white guibg=red
+
 
 execute pathogen#infect()
