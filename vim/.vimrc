@@ -3,16 +3,35 @@ syntax enable
 set background=dark
 colorscheme solarized
 set nu
-let mapleader = ','
+let mapleader = "\<Space>"
 
 " Unite
-nnoremap <C-k> :Unite -start-insert file_rec buffer<CR>
-nnoremap <C-l> :Unite -start-insert line<CR>
+nnoremap <leader>f :Unite -start-insert file_rec buffer<CR>
+nnoremap <leader>/ :Unite -start-insert line<CR>
 
 " CtrlP
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+
+" Window movement
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Copy/pasta to/from system clipboard
+vmap <Leader>y "+y
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" Command output
+nnoremap <leader>; :r!
+
+" Scratch buffer
+nnoremap <leader>s :e /tmp/scratch<CR>
 
 set noswapfile
 set nobackup
@@ -37,13 +56,13 @@ nnoremap Y y$
 nnoremap <left> :wa!<cr>:tabp<cr>
 nnoremap <right> :wa!<cr>:tabn<cr>
 
-noremap <F1> :checktime
-inoremap <F1> jj:checktime<cr>
-
 inoremap <ESC> <nop>
 
-nnoremap ; :
-nnoremap : ;
+nnoremap <leader>vs :vsplit .<CR>
+nnoremap <leader>hs :split .<CR>
+
+" Write as sudo
+cnoremap w!! w!sudo tee %
 
 set ruler
 set cmdheight=2
@@ -130,6 +149,16 @@ function! HasPaste()
 endfunction
 
 highlight WhiteOnRed guifg=white guibg=red
+
+let g:netrw_browse_split=4
+let g:netrw_liststyle=3
+" let g:netrw_menu=0
+" let g:netrw_banner=0
+let g:netrw_altv=1
+let g:netrw_winsize=60
+
+nnoremap ; :
+nnoremap : ;
 
 
 execute pathogen#infect()
