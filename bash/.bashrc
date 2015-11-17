@@ -113,4 +113,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Enable TMUX if not enabled
+if [ "$TMUX" = "" ]; then tmux; fi
+
 source ~/.bash_prompt
+
