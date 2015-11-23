@@ -1,1 +1,2 @@
-for d in $(ls); do stow $d -t ~; done
+rm ../.bashrc
+for d in $(ls); do stow $d; done
