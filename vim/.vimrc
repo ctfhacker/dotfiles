@@ -3,6 +3,8 @@ syntax enable
 set background=dark
 colorscheme solarized
 set nu
+
+" Gotta take this from Spacemacs - so good
 let mapleader = "\<Space>"
 
 " Unite
@@ -33,6 +35,9 @@ nnoremap <leader>; :r!
 " Scratch buffer
 nnoremap <leader>s :e /tmp/scratch<CR>
 
+" Kill buffers without having to kill the window
+nnoremap <leader>bd :bp<CR>:bd#<CR>
+
 set noswapfile
 set nobackup
 
@@ -50,16 +55,13 @@ nnoremap L $
 vnoremap H ^
 vnoremap L g_
 
-" More logical Y (defaul was alias for yy)
+" More logical Y (default was alias for yy)
 nnoremap Y y$
-
-nnoremap <left> :wa!<cr>:tabp<cr>
-nnoremap <right> :wa!<cr>:tabn<cr>
 
 inoremap <ESC> <nop>
 
-nnoremap <leader>vs :vsplit .<CR>
-nnoremap <leader>hs :split .<CR>
+nnoremap <leader>vs :vsplit<CR>:Explore<CR>
+nnoremap <leader>hs :split<CR>:Explore<CR>
 
 " Write as sudo
 cnoremap w!! w!sudo tee %
@@ -157,6 +159,5 @@ let g:netrw_winsize=60
 
 nnoremap ; :
 nnoremap : ;
-
 
 execute pathogen#infect()
