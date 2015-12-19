@@ -24,7 +24,6 @@ nnoremap <C-H> <C-W><C-H>
 
 " Fancy IPython
 nnoremap <leader>p oimport IPython; shell = IPython.terminal.embed.InteractiveShellEmbed(); shell.mainloop()<ESC>
-inoremap <leader>p <ESC>oimport IPython; shell = IPython.terminal.embed.InteractiveShellEmbed(); shell.mainloop()<ESC>
 
 " Command output
 nnoremap <leader>; :r!
