@@ -4,6 +4,7 @@ alias l='ls -Gl'
 alias ll='ls -Gla '
 alias sl=ls
 alias dc=cd
+alias i=ipython
 
 # Reload bash_profile
 alias reload='source ~/.bash_profile'
