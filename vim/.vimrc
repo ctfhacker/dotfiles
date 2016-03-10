@@ -54,8 +54,6 @@ vnoremap L g_
 " More logical Y (default was alias for yy)
 nnoremap Y y$
 
-inoremap <ESC> <nop>
-
 nnoremap <leader>vs :vsplit<CR>:Explore<CR>
 nnoremap <leader>hs :split<CR>:Explore<CR>
 
