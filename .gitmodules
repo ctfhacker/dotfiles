@@ -1,0 +1,9 @@
+[submodule "vim/.vim/bundle/ctrlp.vim"]
+	path = vim/.vim/bundle/ctrlp.vim
+	url = git@github.com:ctrlpvim/ctrlp.vim.git
+[submodule "vim/.vim/bundle/jedi-vim"]
+	path = vim/.vim/bundle/jedi-vim
+	url = git@github.com:davidhalter/jedi-vim.git
+[submodule "vim/.vim/bundle/unite"]
+	path = vim/.vim/bundle/unite
+	url = git@github.com:Shougo/unite.vim.git

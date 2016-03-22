@@ -6,6 +6,10 @@ alias sl=ls
 alias dc=cd
 alias i=ipython
 
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+
 # Reload bash_profile
 alias reload='source ~/.bash_profile'
 

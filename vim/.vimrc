@@ -154,4 +154,8 @@ let g:netrw_winsize=60
 nnoremap ; :
 nnoremap : ;
 
+let g:incpy#Name = "internal-python"
+let g:Program = ""
+let g:WindowRatio = 1.0/8
+
 execute pathogen#infect()
