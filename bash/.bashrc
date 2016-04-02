@@ -113,6 +113,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+alias tmux='export TERM=screen-256color; tmux -2'
 # Enable TMUX if not enabled
 if [ "$TMUX" = "" ]; then tmux; fi
 
