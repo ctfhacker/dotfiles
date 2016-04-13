@@ -120,23 +120,23 @@ if [ "$TMUX" = "" ]; then tmux; fi
 source ~/.bash_prompt
 
 if [ -f ~/.fzf.bash ]; then
-if [[ ! "$PATH" == */home/epictreasure/.fzf/bin* ]]; then
+if [[ ! "$PATH" == *$HOME/.fzf/bin* ]]; then
     # Setup fzf
     # ---------
-      export PATH="$PATH:/home/epictreasure/.fzf/bin"
+      export PATH="$PATH:$HOME/.fzf/bin"
       fi
 
     # Man path
     # --------
-    if [[ ! "$MANPATH" == */home/epictreasure/.fzf/man* && -d "/home/epictreasure/.fzf/man" ]]; then
-        export MANPATH="$MANPATH:/home/epictreasure/.fzf/man"
+    if [[ ! "$MANPATH" == *$HOME/.fzf/man* && -d "$HOME/.fzf/man" ]]; then
+        export MANPATH="$MANPATH:$HOME/.fzf/man"
         fi
 
 # Auto-completion
 # ---------------
-    [[ $- == *i* ]] && source "/home/epictreasure/.fzf/shell/completion.bash" 2> /dev/null
+    [[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.bash" 2> /dev/null
 
 # Key bindings
 # ------------
-    source "/home/epictreasure/.fzf/shell/key-bindings.bash"
+    source "$HOME/.fzf/shell/key-bindings.bash"
 fi 
