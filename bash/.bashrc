@@ -118,3 +118,4 @@ if [ "$TMUX" = "" ]; then tmux; fi
 
 source ~/.bash_prompt
 
+if [ -f ~/.fzf.bash ] && source ~/.fzf.bash
