@@ -7,3 +7,6 @@
 [submodule "vim/.vim/bundle/unite"]
 	path = vim/.vim/bundle/unite
 	url = git@github.com:Shougo/unite.vim.git
+[submodule "vim/.vim/bundle/vim-incpy"]
+	path = vim/.vim/bundle/vim-incpy
+	url = git@github.com:arizvisa/vim-incpy
