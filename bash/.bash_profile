@@ -24,8 +24,12 @@ alias findstr=grep
 alias tmux='export TERM=screen-256color; tmux -2'
 
 alias ips='ip a'
+alias ipa='ip a'
 
 export PYENV_ROOT="${HOME}/.pyenv"
+
+alias et-pull='eval $(docker-machine env default); docker pull ctfhacker/epictreasure'
+alias et='eval $(docker-machine env default); docker run -v host-share:/home/epictreasure/host-share -it --workdir=/root ctfhacker/epictreasure'
 
 if [ -d "${PYENV_ROOT}" ]; then
     export PATH="${PYENV_ROOT}/bin:${PATH}"
