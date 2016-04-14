@@ -1,12 +1,12 @@
 [submodule "vim/.vim/bundle/ctrlp.vim"]
 	path = vim/.vim/bundle/ctrlp.vim
-	url = git@github.com:ctrlpvim/ctrlp.vim.git
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "vim/.vim/bundle/jedi-vim"]
 	path = vim/.vim/bundle/jedi-vim
-	url = git@github.com:davidhalter/jedi-vim.git
+	url = https://github.com/davidhalter/jedi-vim.git
 [submodule "vim/.vim/bundle/unite"]
 	path = vim/.vim/bundle/unite
-	url = git@github.com:Shougo/unite.vim.git
+	url = https://github.com/Shougo/unite.vim.git
 [submodule "vim/.vim/bundle/vim-incpy"]
 	path = vim/.vim/bundle/vim-incpy
-	url = git@github.com:arizvisa/vim-incpy
+	url = https://github.com/arizvisa/vim-incpy
