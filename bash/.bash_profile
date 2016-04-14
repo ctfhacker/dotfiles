@@ -29,7 +29,7 @@ alias ipa='ip a'
 export PYENV_ROOT="${HOME}/.pyenv"
 
 alias et-pull='eval $(docker-machine env default); docker pull ctfhacker/epictreasure'
-alias et='eval $(docker-machine env default); docker run -v host-share:/home/epictreasure/host-share -it --workdir=/root ctfhacker/epictreasure'
+alias et='eval $(docker-machine env default); docker run -v host-share:/root/host-share --privileged -it --workdir=/root ctfhacker/epictreasure'
 
 if [ -d "${PYENV_ROOT}" ]; then
     export PATH="${PYENV_ROOT}/bin:${PATH}"
