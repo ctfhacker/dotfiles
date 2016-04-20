@@ -140,3 +140,5 @@ if [ -d ~/.fzf ]; then
     # ------------
     source "$HOME/.fzf/shell/key-bindings.bash"
 fi 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
