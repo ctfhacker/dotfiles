@@ -12,4 +12,4 @@
 	url = https://github.com/arizvisa/vim-incpy
 [submodule "vim/.vim/bundle/vim-go"]
 	path = vim/.vim/bundle/vim-go
-	url = https://github.com/faith/vim-go
+	url = https://github.com/fatih/vim-go
