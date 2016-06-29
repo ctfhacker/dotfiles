@@ -324,8 +324,8 @@ keyboard = (
   { key = "meta-[M"; id = "command"; data = "mouse_xterm"; }
 );
 hilights = (
-  { text = "help"; nick = "yes"; word = "yes"; },
   { text = "barbershopper"; nick = "no"; word = "yes"; }
+  { text = "barbersh-"; nick = "no"; word = "no"; }
 );
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
