@@ -32,6 +32,9 @@ alias et-pull='eval $(docker-machine env default); docker pull ctfhacker/epictre
 alias et='eval $(docker-machine env default); docker run -v host-share:/root/host-share --privileged -it --workdir=/root ctfhacker/epictreasure'
 alias docker-restart='docker-machine restart default; eval $(docker-machine env default)'
 
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
 if [ -d "${PYENV_ROOT}" ]; then
     export PATH="${PYENV_ROOT}/bin:${PATH}"
     eval "$(pyenv init -)"
