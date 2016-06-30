@@ -36,9 +36,14 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 alias cgc='cd ~/ctfs/cgc; vagrant up; vagrant ssh'
-export GOPATH=/usr/local/go/bin
-export GOROOT=/usr/local/go
+
+export GOPATH=${HOME}/.go
+export GOROOT=${HOME}/go
 export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/.virtualenv-project-home
+source /usr/local/bin/virtualenvwrapper.sh
 
 if [ -d "${PYENV_ROOT}" ]; then
     export PATH="${PYENV_ROOT}/bin:${PATH}"
