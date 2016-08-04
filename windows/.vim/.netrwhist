@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/coryduplantis/workspace/epictreasure/host-share/firmware/EA4500/_FW_EA4500V3_3.1.6.166173_prod.img.extracted/squashfs-root/www/cgi-bin'
+let g:netrw_dirhist_2='/Users/coryduplantis/interview'
+let g:netrw_dirhist_3='/home/ctfhacker/workspace/angr-doc/examples/asisctffinals2015_fake'
+let g:netrw_dirhist_4='/home/ctfhacker/workspace/angr-doc/examples/9447_nobranch'
+let g:netrw_dirhist_5='/home/ctfhacker'
+let g:netrw_dirhist_6='/f/bugs/ichitaro'
