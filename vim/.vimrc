@@ -79,7 +79,7 @@ set ignorecase
 set hlsearch
 set showmatch
 
-set list listchars=tab:>-,trail:.,extends:>
+" set list listchars=tab:>-,trail:.,extends:>
 
 set laststatus=2
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
@@ -93,16 +93,21 @@ endif
 highlight BadWhitespace ctermbg=red guibg=red
 
 " Display tabs at the beginning of a line in Python mode as bad.
-au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+au BufRead,BufNewFile *.go,*.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.go,*.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
+au BufNewFile *.go,*.py,*.pyw,*.c,*.h set fileformat=unix
 
 let python_highlight_all=1
 syntax on
 
-au BufRead,BufNewFile *.py,*.py match ErrorMsg '\%>95v.\+'
+au BufRead,BufNewFile *.go,*.py,*.py match ErrorMsg '\%>95v.\+'
+
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
 
 " This rewires n and N to do the highlighing...
 nnoremap <silent> n nzz:call HLNext(0.2)<cr>
