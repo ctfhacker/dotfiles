@@ -33,6 +33,10 @@ nnoremap <leader>s :e /tmp/scratch<CR>
 
 " Kill buffers without having to kill the window
 nnoremap <leader>bd :bp<CR>:bd#<CR>
+ 
+" Go Commands
+nnoremap <leader>gr :GoRun<CR>
+nnoremap <leader>gb :GoBuild<CR>
 
 set noswapfile
 set nobackup
@@ -162,5 +166,12 @@ nnoremap : ;
 let g:incpy#Name = "internal-python"
 let g:Program = ""
 let g:WindowRatio = 1.0/8
+
+let g:go_fmt_command = "goimports"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
 
 execute pathogen#infect()
