@@ -36,6 +36,7 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 alias cgc='cd ~/ctfs/cgc; vagrant up; vagrant ssh'
+alias binja='cd ~/workspace/binaryninja; ./binaryninja'
 
 export GOPATH=${HOME}/.go
 export GOROOT=${HOME}/go
