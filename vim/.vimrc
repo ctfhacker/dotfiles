@@ -37,6 +37,7 @@ nnoremap <leader>bd :bp<CR>:bd#<CR>
 " Go Commands
 nnoremap <leader>gr :GoRun<CR>
 nnoremap <leader>gb :GoBuild<CR>
+nnoremap <leader>gd :GoDecls<CR>
 
 set noswapfile
 set nobackup
