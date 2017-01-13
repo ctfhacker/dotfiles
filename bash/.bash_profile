@@ -30,6 +30,9 @@ export PYENV_ROOT="${HOME}/.pyenv"
 
 alias et-pull='eval $(docker-machine env default); docker pull ctfhacker/epictreasure'
 alias et='eval $(docker-machine env default); docker run -v /home/ctfhacker/ctfs:/root/host-share --privileged -it --workdir=/root ctfhacker/epictreasure'
+alias et2='eval $(docker-machine env default); docker run -v /home/ctfhacker/ctfs:/root/host-share --privileged -it --workdir=/root ctfhacker/epictreasure2'
+
+alias moflow='eval $(docker-machine env default); docker run -v /home/ctfhacker/ctfs:/root/host-share --privileged -it --workdir=/moflow moflow/moflow-0.8'
 alias docker-restart='docker-machine restart default; eval $(docker-machine env default)'
 
 alias pbcopy='xclip -selection clipboard'

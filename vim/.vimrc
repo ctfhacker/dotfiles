@@ -4,6 +4,9 @@ set background=dark
 colorscheme solarized
 set nu
 
+set nocompatible
+filetype plugin on
+
 " Gotta take this from Spacemacs - so good
 let mapleader = "\<Space>"
 
@@ -59,6 +62,12 @@ nnoremap <leader>hs :split<CR>:Explore<CR>
 
 " Write as sudo
 cnoremap w!! w!sudo tee %
+
+" Search all paths recursively
+set path+=**
+
+" Display all matching files in a nice menu
+set wildmenu
 
 set ruler
 set cmdheight=2
