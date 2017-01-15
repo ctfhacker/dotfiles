@@ -1,12 +1,6 @@
-[submodule "vim/.vim/bundle/ctrlp.vim"]
-	path = vim/.vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "vim/.vim/bundle/jedi-vim"]
 	path = vim/.vim/bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
-[submodule "vim/.vim/bundle/unite"]
-	path = vim/.vim/bundle/unite
-	url = https://github.com/Shougo/unite.vim.git
 [submodule "vim/.vim/bundle/vim-incpy"]
 	path = vim/.vim/bundle/vim-incpy
 	url = https://github.com/arizvisa/vim-incpy
@@ -19,11 +13,6 @@
 [submodule "vim/.vim/bundle/neosnippet-snippets"]
 	path = vim/.vim/bundle/neosnippet-snippets
     url = https://github.com/Shougo/neosnippet-snippets
-[submodule "vim/.vim/bundle/neosnippet.vim"]
-	path = vim/.vim/bundle/neocomplete.vim
-    url = https://github.com/Shougo/neocomplete.vim
 [submodule "vim/.vim/bundle/SimpleAutoComplPop"]
 	path = vim/.vim/bundle/SimpleAutoComplPop
     url = https://github.com/roxma/SimpleAutoComplPop
-
-
