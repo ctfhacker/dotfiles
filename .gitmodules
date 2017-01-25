@@ -15,4 +15,4 @@
 	url = https://github.com/Shougo/neosnippet-snippets
 [submodule "vim/.vim/bundle/SimpleAutoComplPop"]
 	path = vim/.vim/bundle/SimpleAutoComplPop
-    url = https://github.com/roxma/SimpleAutoComplPop
+	url = https://github.com/roxma/SimpleAutoComplPop
