@@ -13,3 +13,6 @@
 [submodule "vim/.vim/bundle/SimpleAutoComplPop"]
 	path = vim/.vim/bundle/SimpleAutoComplPop
 	url = https://github.com/roxma/SimpleAutoComplPop
+[submodule "vim/.vim/bundle/vim-ps1"]
+	path = vim/.vim/bundle/vim-ps1
+	url = https://github.com/PProvost/vim-ps1
