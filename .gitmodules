@@ -16,3 +16,6 @@
 [submodule "vim/.vim/bundle/vim-ps1"]
 	path = vim/.vim/bundle/vim-ps1
 	url = https://github.com/PProvost/vim-ps1
+[submodule "vim/.vim/bundle/rust.vim"]
+	path = vim/.vim/bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim
