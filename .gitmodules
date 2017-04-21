@@ -19,6 +19,6 @@
 [submodule "vim/.vim/bundle/rust.vim"]
 	path = vim/.vim/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim
-[submodule "vim/.vim/bundle/vim-syntastic"]
+[submodule "vim/.vim/bundle/syntastic"]
 	path = vim/.vim/bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
