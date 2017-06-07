@@ -29,8 +29,7 @@ alias ipa='ip a'
 export PYENV_ROOT="${HOME}/.pyenv"
 
 alias et-pull='eval $(docker-machine env default); docker pull ctfhacker/epictreasure'
-alias et='eval $(docker-machine env default); docker run -v /Users/cduplant/ctfs:/root/host-share --privileged -it --workdir=/root ctfhacker/epictreasure'
-alias et2='eval $(docker-machine env default); docker run -v /home/ctfhacker/ctfs:/root/host-share --privileged -it --workdir=/root ctfhacker/epictreasure2'
+alias et='eval $(docker-machine env default); docker run -v /Users/cduplant/ctfs:/root/host-share -p 80 --privileged -it --network=bridge --workdir=/root --rm ctfhacker/epictreasure'
 
 alias moflow='eval $(docker-machine env default); docker run -v /home/ctfhacker/ctfs:/root/host-share --privileged -it --workdir=/moflow moflow/moflow-0.8'
 alias docker-restart='docker-machine restart default; eval $(docker-machine env default)'
@@ -69,4 +68,5 @@ if [ -f $HOME/.cargo/env ]; then
     source $HOME/.cargo/env
 fi
 
+source $HOME/.cargo/env
 source ~/.bashrc
