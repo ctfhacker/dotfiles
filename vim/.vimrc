@@ -16,7 +16,7 @@ let mapleader = "\<Space>"
 
 " CtrlP
 nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>t :CtrlP<CR>
+nnoremap ;e :CtrlP<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 
 " Add System yank
@@ -200,11 +200,21 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_rust_checkers = ['clippy']
+let g:syntastic_rust_checkers = ['']
 " let g:rustfmt_autosave = 1
+
+" rust-racer options
+set hidden
+let g:racer_experimental_completer = 1
+
+" Supertab
+" let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+" let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+" let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+
 
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
