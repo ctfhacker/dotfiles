@@ -25,3 +25,6 @@
 [submodule "vim/.vim/bundle/vimagit"]
 	path = vim/.vim/bundle/vimagit
 	url = https://github.com/jreybert/vimagit
+[submodule "vim/.vim/bundle/ctrlp.vim"]
+	path = vim/.vim/bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git

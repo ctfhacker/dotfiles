@@ -11,13 +11,16 @@ filetype plugin on
 let mapleader = "\<Space>"
 
 " Unite
-nnoremap <leader>f :Unite -start-insert file_rec buffer<CR>
-nnoremap <leader>/ :Unite -start-insert line<CR>
+" nnoremap <leader>f :Unite -start-insert file_rec buffer<CR>
+" nnoremap <leader>/ :Unite -start-insert line<CR>
 
 " CtrlP
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+
+" Add System yank
+set clipboard=unnamedplus
 
 " Window movement
 nnoremap <C-J> <C-W><C-J>
@@ -54,6 +57,11 @@ noremap j gj
 noremap k gk
 noremap gj j
 noremap gk k
+
+" Ignore files
+set wildignore+=*.a,*.o
+set wildignore+=*.DS_Store,.git,.hg,.svn
+set wildignore+=*.pyc
 
 " Remap H and L (top, bottom of screen to left and right end of line)
 nnoremap H ^
@@ -196,6 +204,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_rust_checkers = ['clippy']
+" let g:rustfmt_autosave = 1
 
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
