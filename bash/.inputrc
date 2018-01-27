@@ -27,13 +27,18 @@ set show-all-if-ambiguous on
 
 # Ignore case
 set completion-ignore-case on
-menu-complete-display-prefix on
+set menu-complete-display-prefix on
 
+set keymap vi-insert
 TAB: menu-complete
 # Shift tab cycles completions backward
 "\e[Z": menu-complete-backward
 
-set vi-cmd-mode-string \1\e[6 q\2
-set vi-ins-mode-string \1\e[3 q\2
-
 set show-mode-in-prompt on
+set vi-ins-mode-string \1\e[34;1m\2(ins)\1\e[0m\2
+set vi-cmd-mode-string \1\e[35;1m\2(cmd)\1\e[0m\2
+
+set expand-tilde on
+
+set colored-stats on
+
