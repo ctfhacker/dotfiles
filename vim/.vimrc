@@ -16,11 +16,11 @@ let mapleader = "\<Space>"
 
 " CtrlP
 nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap ;e :CtrlP<CR>
+" nnoremap ;e :CtrlP<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 
 " Add System yank
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " Window movement
 nnoremap <C-J> <C-W><C-J>
