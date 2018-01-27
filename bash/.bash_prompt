@@ -59,6 +59,15 @@ parse_git_dirty () {
 parse_git_branch () {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
+git_branch () {
+    echo -e  "on $YELLOW$(parse_git_branch)$BASE0"
+}
 
-PS1="\[${BOLD}${CYAN}\]\u \[$BASE0\]at \[$CYAN\]\h \[$BASE0\]in \[$BLUE\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$YELLOW\]\$(parse_git_branch)\[$BASE0\]\n\$ \[$RESET\]"
+# PS1="\[${BOLD}${CYAN}\]\u \[$BASE0\]at \[$CYAN\]\h \[$BASE0\]in \[$BLUE\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$YELLOW\]\$(parse_git_branch)\[$BASE0\]\n\$ \[$RESET\]"
 
+function prompt {
+    PS1=' $ '
+    echo -e "$BOLD$CYAN$USER$BASE0 at $CYAN$(hostname)$BASE0 in $BLUE$PWD $BASE0$([[ -n $(git branch 2> /dev/null) ]] && git_branch)$RESET"
+}
+
+PROMPT_COMMAND='prompt'

@@ -17,3 +17,23 @@ set history-preserve-point on
 "\e\e[C": forward-word
 "\e[1;2D": backward-word
 "\e[1;2C": forward-word
+
+# Use Vi, not emacs
+set editing-mode vi
+set keymap vi-command
+
+# Show all completions as soon as I press tab, even if more than one
+set show-all-if-ambiguous on
+
+# Ignore case
+set completion-ignore-case on
+menu-complete-display-prefix on
+
+TAB: menu-complete
+# Shift tab cycles completions backward
+"\e[Z": menu-complete-backward
+
+set vi-cmd-mode-string \1\e[6 q\2
+set vi-ins-mode-string \1\e[3 q\2
+
+set show-mode-in-prompt on
