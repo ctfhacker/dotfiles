@@ -67,7 +67,7 @@ git_branch () {
 
 function prompt {
     PS1=' $ '
-    echo -e "$BOLD$CYAN$USER$BASE0 at $CYAN$(hostname)$BASE0 in $BLUE$PWD $BASE0$([[ -n $(git branch 2> /dev/null) ]] && git_branch)$RESET"
+    echo -e "($(echo $VIRTUAL_ENV | rev | cut -d'/' -f1 | rev)) $BOLD$CYAN$USER$BASE0 at $CYAN$(hostname)$BASE0 in $BLUE$PWD $BASE0$([[ -n $(git branch 2> /dev/null) ]] && git_branch)$RESET"
 }
 
 PROMPT_COMMAND='prompt'
