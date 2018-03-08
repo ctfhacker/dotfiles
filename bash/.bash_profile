@@ -38,7 +38,7 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 alias cgc='cd ~/ctfs/cgc; vagrant up; vagrant ssh'
-alias binja='cd ~/workspace/binaryninja; ./binaryninja'
+alias binja='cd ~/binaryninja; ./binaryninja'
 
 alias aws-personal='ssh -i ~/.znc.pem ubuntu@54.148.111.51'
 
@@ -68,7 +68,6 @@ if [ -f $HOME/.cargo/env ]; then
     source $HOME/.cargo/env
 fi
 
-bind '"jk":"\e"'
 
 source $HOME/.cargo/env
 source ~/.bashrc
