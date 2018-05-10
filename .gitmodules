@@ -3,28 +3,28 @@
 	url = https://github.com/davidhalter/jedi-vim.git
 [submodule "vim/.vim/bundle/vim-go"]
 	path = vim/.vim/bundle/vim-go
-	url = https://github.com/fatih/vim-go
+	url = https://github.com/fatih/vim-go.git
 [submodule "vim/.vim/bundle/neosnippet.vim"]
 	path = vim/.vim/bundle/neosnippet.vim
-	url = https://github.com/Shougo/neosnippet.vim
+	url = https://github.com/Shougo/neosnippet.vim.git
 [submodule "vim/.vim/bundle/neosnippet-snippets"]
 	path = vim/.vim/bundle/neosnippet-snippets
-	url = https://github.com/Shougo/neosnippet-snippets
+	url = https://github.com/Shougo/neosnippet-snippets.git
 [submodule "vim/.vim/bundle/SimpleAutoComplPop"]
 	path = vim/.vim/bundle/SimpleAutoComplPop
-	url = https://github.com/roxma/SimpleAutoComplPop
+	url = https://github.com/roxma/SimpleAutoComplPop.git
 [submodule "vim/.vim/bundle/vim-ps1"]
 	path = vim/.vim/bundle/vim-ps1
-	url = https://github.com/PProvost/vim-ps1
+	url = https://github.com/PProvost/vim-ps1.git
 [submodule "vim/.vim/bundle/rust.vim"]
 	path = vim/.vim/bundle/rust.vim
-	url = https://github.com/rust-lang/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
 [submodule "vim/.vim/bundle/syntastic"]
 	path = vim/.vim/bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
 [submodule "vim/.vim/bundle/vimagit"]
 	path = vim/.vim/bundle/vimagit
-	url = https://github.com/jreybert/vimagit
+	url = https://github.com/jreybert/vimagit.git
 [submodule "vim/.vim/bundle/ctrlp.vim"]
 	path = vim/.vim/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
@@ -33,19 +33,19 @@
 	url = https://github.com/racer-rust/vim-racer.git
 [submodule "vim/.vim/bundle/supertab"]
 	path = vim/.vim/bundle/supertab
-	url = https://github.com/ervandew/supertab
+	url = https://github.com/ervandew/supertab.git
 [submodule "vim/.vim/bundle/async.vim"]
 	path = vim/.vim/bundle/async.vim
-	url = https://github.com/prabirshrestha/async.vim
+	url = https://github.com/prabirshrestha/async.vim.git
 [submodule "vim/.vim/bundle/vim-lsp"]
 	path = vim/.vim/bundle/vim-lsp
-	url = https://github.com/prabirshrestha/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp.git
 [submodule "vim/.vim/bundle/asyncomplete.vim"]
 	path = vim/.vim/bundle/asyncomplete.vim
-	url = https://github.com/prabirshrestha/asyncomplete.vim
+	url = https://github.com/prabirshrestha/asyncomplete.vim.git
 [submodule "vim/.vim/bundle/ayncomplete-lsp.vim"]
 	path = vim/.vim/bundle/ayncomplete-lsp.vim
-	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim
+	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
 [submodule "vim/.vim/bundle/vim-solidity"]
 	path = vim/.vim/bundle/vim-solidity
 	url = https://github.com/tomlion/vim-solidity.git
