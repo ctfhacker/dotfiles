@@ -29,7 +29,7 @@ alias ipa='ip a'
 export PYENV_ROOT="${HOME}/.pyenv"
 
 alias et-pull='eval $(docker-machine env default); docker pull ctfhacker/epictreasure'
-alias et='eval $(docker-machine env default); docker run -v /home/ctfhacker/ctfs:/root/host-share --rm --privileged -it --workdir=/root ctfhacker/epictreasure'
+alias et='eval $(docker-machine env default); docker run -v /Users/cduplant/ctfs:/root/host-share --rm --privileged -it --workdir=/root ctfhacker/epictreasure'
 
 alias moflow='eval $(docker-machine env default); docker run -v /home/ctfhacker/ctfs:/root/host-share --privileged -it --workdir=/moflow moflow/moflow-0.8'
 alias docker-restart='docker-machine restart default; eval $(docker-machine env default)'

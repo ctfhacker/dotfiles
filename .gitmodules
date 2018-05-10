@@ -34,8 +34,8 @@
 [submodule "vim/.vim/bundle/supertab"]
 	path = vim/.vim/bundle/supertab
 	url = https://github.com/ervandew/supertab
-[submodule "vim/.vim/bundle/saync.vim"]
-	path = vim/.vim/bundle/saync.vim
+[submodule "vim/.vim/bundle/async.vim"]
+	path = vim/.vim/bundle/async.vim
 	url = https://github.com/prabirshrestha/async.vim
 [submodule "vim/.vim/bundle/vim-lsp"]
 	path = vim/.vim/bundle/vim-lsp
@@ -46,3 +46,6 @@
 [submodule "vim/.vim/bundle/ayncomplete-lsp.vim"]
 	path = vim/.vim/bundle/ayncomplete-lsp.vim
 	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim
+[submodule "vim/.vim/bundle/vim-solidity"]
+	path = vim/.vim/bundle/vim-solidity
+	url = https://github.com/tomlion/vim-solidity.git

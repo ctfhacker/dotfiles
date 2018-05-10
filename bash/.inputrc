@@ -23,6 +23,7 @@ set history-preserve-point on
 # Use Vi, not emacs
 set editing-mode vi
 
+set keymap vi-command
 # Show all completions as soon as I press tab, even if more than one
 set show-all-if-ambiguous on
 
