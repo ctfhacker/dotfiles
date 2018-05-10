@@ -47,6 +47,9 @@ nnoremap <leader>gd :GoDecls<CR>
 nnoremap <leader>gD :GoDeclsDir<CR>
 nnoremap <leader>gi :GoInfo<CR>
 
+" Rust Commands
+nnoremap <leader>cb :!cargo build<CR>
+
 set noswapfile
 set nobackup
 
@@ -220,6 +223,15 @@ let g:racer_experimental_completer = 1
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
+
 "
 " " SuperTab like snippets behavior.
 imap <expr><TAB>
