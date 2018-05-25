@@ -51,4 +51,4 @@
 	url = https://github.com/tomlion/vim-solidity.git
 [submodule "vim/.vim/bundle/vim-clang-format"]
 	path = vim/.vim/bundle/vim-clang-format
-	url = https://github.com/rhysd/vim-clang-format
+	url = https://github.com/rhysd/vim-clang-format.git
