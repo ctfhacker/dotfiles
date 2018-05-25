@@ -230,7 +230,7 @@ if executable('rls')
         \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
         \ 'whitelist': ['rust'],
         \ })
-endif
+endif 
 
 "
 " " SuperTab like snippets behavior.
