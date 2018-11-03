@@ -129,7 +129,7 @@ au BufNewFile *.go,*.py,*.pyw,*.c,*.h set fileformat=unix
 let python_highlight_all=1
 syntax on
 
-au BufRead,BufNewFile *.go,*.py,*.py match ErrorMsg '\%>95v.\+'
+" au BufRead,BufNewFile *.go,*.py,*.py match ErrorMsg '\%>95v.\+'
 
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
