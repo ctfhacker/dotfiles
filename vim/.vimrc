@@ -1,23 +1,74 @@
+" set nocompatible
+" filetype plugin indent on
+
+" Gotta take this from Spacemacs - so good
+let mapleader = "\<Space>"
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+""" Vundle Init """
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) "
+Plugin 'w0rp/ale'
+
+" Status bar at bottom of window "
+Plugin 'itchyny/lightline.vim'
+
+" Highlight the currently yanked characters "
+Plugin 'machakann/vim-highlightedyank'
+
+" Fuzzy searching "
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
+
+" Rust Vim "
+Plugin 'rust-lang/rust.vim'
+
+" Display function signatures " 
+Plugin 'Shougo/echodoc.vim'
+
+" Vim syntax for TOML "
+Plugin 'cespare/vim-toml'
+
+" Auto character alignment in columns (:, = , ect) "
+Plugin 'godlygeek/tabular'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+""" Vundle End """
+
 set t_Co=16
 syntax enable
 set background=dark
 colorscheme solarized
 set nu
 
-set nocompatible
-filetype plugin indent on
-
-" Gotta take this from Spacemacs - so good
-let mapleader = "\<Space>"
+if executable('rg')
+    set grepprg=rg\ --no-heading\ --vimgrep
+    set grepformat=%f:%l:%c:%m
+endif
 
 " Unite
 " nnoremap <leader>f :Unite -start-insert file_rec buffer<CR>
 " nnoremap <leader>/ :Unite -start-insert line<CR>
 
 " CtrlP
-nnoremap <leader>/ :CtrlPBuffer<CR>
-nnoremap <leader>e :CtrlP<CR>
-nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+" nnoremap <leader>/ :CtrlPBuffer<CR>
+" nnoremap <leader>e :CtrlP<CR>
+" nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 " let g:ctrlp_show_hidden = 1
 
 " Add System yank
@@ -33,23 +84,23 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>p oimport IPython; shell = IPython.terminal.embed.InteractiveShellEmbed(); shell.mainloop()<ESC>
 
 " Command output
-nnoremap <leader>; :r!
+" nnoremap <leader>; :r!
 
 " Scratch buffer
-nnoremap <leader>s :e /tmp/scratch<CR>
+" nnoremap <leader>s :e /tmp/scratch<CR>
 
 " Kill buffers without having to kill the window
-nnoremap <leader>bd :bp<CR>:bd#<CR>
+" nnoremap <leader>bd :bp<CR>:bd#<CR>
  
 " Go Commands
-nnoremap <leader>gr :GoRun<CR>
-nnoremap <leader>gb :GoBuild<CR>
-nnoremap <leader>gd :GoDecls<CR>
-nnoremap <leader>gD :GoDeclsDir<CR>
-nnoremap <leader>gi :GoInfo<CR>
+" nnoremap <leader>gr :GoRun<CR>
+" nnoremap <leader>gb :GoBuild<CR>
+" nnoremap <leader>gd :GoDecls<CR>
+" nnoremap <leader>gD :GoDeclsDir<CR>
+" nnoremap <leader>gi :GoInfo<CR>
 
 " Rust Commands
-nnoremap <leader>cb :!cargo build<CR>
+" nnoremap <leader>cb :!cargo build<CR>
 
 set noswapfile
 set nobackup
@@ -198,22 +249,42 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+
+let g:ale_sign_column_always = 1 
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_enter = 0
+let g:ale_rust_cargo_use_check = 1
+let g:ale_rust_cargo_check__all_targets = 1
+let g:ale_fix_on_save = 1 
+let g:ale_completion_enabled = 1 
 
 let g:syntastic_rust_checkers = ['cargo']
-let g:rustfmt_command = 'rustup run nightly rustfmt'
+" let g:rustfmt_command = 'rustup run stable rustfmt'
+
+let g:rustfmt_command = "rustfmt +nightly"
 let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
+let g:rust_clip_command = 'xclip -selection clipboard'
+let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
 
 " rust-racer options
-set hidden
-let g:racer_experimental_completer = 1
+" set hidden
+" let g:racer_experimental_completer = 1
+" let g:racer_cmd = "~/.cargo/bin/racer"
+" au FileType rust nmap gd <Plug>(rust-def)
+" au FileType rust nmap gs <Plug>(rust-def-split)
+" au FileType rust nmap gx <Plug>(rust-def-vertical)
+" au FileType rust nmap gr <Plug>(rust-doc)
 
 " Supertab
 " let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
@@ -222,9 +293,9 @@ let g:racer_experimental_completer = 1
 
 
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 "
 " " SuperTab like snippets behavior.
