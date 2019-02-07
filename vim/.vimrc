@@ -5,7 +5,7 @@ colorscheme solarized
 set nu
 
 set nocompatible
-filetype plugin on
+filetype plugin indent on
 
 " Gotta take this from Spacemacs - so good
 let mapleader = "\<Space>"
@@ -15,9 +15,10 @@ let mapleader = "\<Space>"
 " nnoremap <leader>/ :Unite -start-insert line<CR>
 
 " CtrlP
-nnoremap <leader>b :CtrlPBuffer<CR>
-" nnoremap ;e :CtrlP<CR>
+nnoremap <leader>/ :CtrlPBuffer<CR>
+nnoremap <leader>e :CtrlP<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+" let g:ctrlp_show_hidden = 1
 
 " Add System yank
 " set clipboard=unnamedplus
@@ -206,7 +207,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_rust_checkers = ['']
+let g:syntastic_rust_checkers = ['cargo']
+let g:rustfmt_command = 'rustup run nightly rustfmt'
 let g:rustfmt_autosave = 1
 
 " rust-racer options
@@ -224,14 +226,6 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
-        \ 'whitelist': ['rust'],
-        \ })
-endif 
-
 "
 " " SuperTab like snippets behavior.
 imap <expr><TAB>
@@ -248,10 +242,18 @@ let g:clang_format#style_options = {
             \ "Standard" : "C++11"}
 
 " map to <Leader>cf in C++ code
-autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+" autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " Toggle auto formatting:
-nmap <Leader>C :ClangFormatAutoToggle<CR>
-autocmd FileType c,cpp ClangFormatAutoEnable
+" nmap <Leader>C :ClangFormatAutoToggle<CR>
+" autocmd FileType c,cpp ClangFormatAutoEnable
+
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        \ 'whitelist': ['rust'],
+        \ })
+endif 
 
 execute pathogen#infect()

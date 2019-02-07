@@ -29,7 +29,9 @@ alias ipa='ip a'
 export PYENV_ROOT="${HOME}/.pyenv"
 
 alias et-pull='eval $(docker-machine env default); docker pull ctfhacker/epictreasure'
-alias et='eval $(docker-machine env default); docker run -v /Users/cduplant/ctfs:/root/host-share --rm --privileged -it --workdir=/root ctfhacker/epictreasure'
+alias et='eval $(docker-machine env default); docker run -v /Users/cduplant/ctfs:/root/host-share -v /tmp/.X11-unix:/tmp/.X11-unix --rm --privileged -it --workdir=/root ctfhacker/epictreasure'
+alias et-test='eval $(docker-machine env default); docker run -v /Users/cduplant/ctfs:/root/host-share -v /tmp/.X11-unix:/tmp/.X11-unix --rm --privileged -it --workdir=/root et-test'
+alias wasabi='docker run --rm -t -v /Users/cduplant/ctfs:/root/host-share wasabi'
 
 alias eth='eval $(docker-machine env default); docker run -v /home/ctfhacker/ethdev:/root/host-share --rm --privileged -it --workdir=/root ethylene'
 
@@ -42,10 +44,8 @@ alias pbpaste='xclip -selection clipboard -o'
 alias cgc='cd ~/ctfs/cgc; vagrant up; vagrant ssh'
 alias binja='cd ~/binaryninja; ./binaryninja'
 
-alias aws-personal='ssh -i ~/.znc.pem ubuntu@54.148.111.51'
-
-export GOPATH=${HOME}/.go
-export GOROOT=${HOME}/go
+# export GOPATH=${HOME}/.go
+# export GOROOT=${HOME}/go
 export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 
 export WORKON_HOME=$HOME/.virtualenvs

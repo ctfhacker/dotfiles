@@ -1,1 +1,4 @@
+git submodule update --init --recursive
+pushd vim/.vim/bundle/YouCompleteMe
+./install.py --rust-completer --clang-completer
 stow * -t ~
