@@ -1,7 +1,7 @@
 # Personal commands
-alias ls='ls -G'
-alias l='ls -Gl'
-alias ll='ls -Gla '
+alias ls='exa -lh'
+alias l='exa -lh'
+alias ll='exa -lah'
 alias sl=ls
 alias dc=cd
 alias i=ipython
@@ -9,6 +9,8 @@ alias i=ipython
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
+
+alias cat='bat --theme "Monokai Extended" --paging never'
 
 # Reload bash_profile
 alias reload='source ~/.bash_profile'
