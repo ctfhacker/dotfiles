@@ -43,6 +43,9 @@ Plugin 'cespare/vim-toml'
 " Auto character alignment in columns (:, = , ect) "
 Plugin 'godlygeek/tabular'
 
+" Browse ctags 
+Plugin 'majutsushi/tagbar'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -50,10 +53,12 @@ filetype plugin indent on    " required
 
 """ Vundle End """
 
-set t_Co=16
+set t_Co=256
 syntax enable
 set background=dark
 colorscheme solarized
+let g:solarized_termcolors=256
+" let g:solarized_termtrans = 1
 set nu
 
 if executable('rg')
@@ -296,15 +301,6 @@ let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/
 " imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 " smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 " xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-"
-" " SuperTab like snippets behavior.
-imap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
- \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 let g:clang_format#style_options = {
             \ "AccessModifierOffset" : -4,

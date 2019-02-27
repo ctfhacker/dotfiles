@@ -70,3 +70,5 @@ source $HOME/.cargo/env
 source ~/.bashrc
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH="$PATH:/mnt/c/Program Files/IDA 7.0"
