@@ -2,6 +2,7 @@
 alias ls='exa -lh'
 alias l='exa -lh'
 alias ll='exa -lah'
+alias xxd='hexyl'
 alias sl=ls
 alias dc=cd
 alias i=ipython
@@ -10,7 +11,8 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 
-alias cat='bat --theme "Monokai Extended" --paging never'
+# alias cat='bat --theme "Monokai Extended" --paging never'
+alias cat='bat --theme "Monokai Extended"'
 
 # Reload bash_profile
 alias reload='source ~/.bash_profile'
@@ -55,6 +57,10 @@ export PROJECT_HOME=$HOME/.virtualenv-project-home
 
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+if [ -f /Users/user/Library/Python/2.7/bin/virtualenvwrapper.sh ]; then
+    source /Users/user/Library/Python/2.7/bin/virtualenvwrapper.sh
 fi
 
 if [ -d "${PYENV_ROOT}" ]; then

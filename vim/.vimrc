@@ -56,6 +56,8 @@ set background=dark
 colorscheme solarized
 set nu
 
+nnoremap <leader><TAB> :b#<CR>
+
 if executable('rg')
     set grepprg=rg\ --no-heading\ --vimgrep
     set grepformat=%f:%l:%c:%m
@@ -298,14 +300,6 @@ let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/
 " xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 "
-" " SuperTab like snippets behavior.
-imap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
- \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
 let g:clang_format#style_options = {
             \ "AccessModifierOffset" : -4,
             \ "AllowShortIfStatementsOnASingleLine" : "true",
