@@ -63,6 +63,8 @@ let g:solarized_termcolors=256
 " let g:solarized_termtrans = 1
 set nu
 
+nnoremap <leader><TAB> :b#<CR>
+
 if executable('rg')
     set grepprg=rg\ --no-heading\ --vimgrep
     set grepformat=%f:%l:%c:%m
