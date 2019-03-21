@@ -109,7 +109,7 @@
         <STATE NAME="Modifiers" TYPE="int" VALUE="0" />
     </WRAPPED_OPTION>
     <WRAPPED_OPTION NAME="Redo (ProgramManagerPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
-        <STATE NAME="KeyCode" TYPE="int" VALUE="85" />
+        <STATE NAME="KeyCode" TYPE="int" VALUE="82" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="65" />
     </WRAPPED_OPTION>
     <WRAPPED_OPTION NAME="Go To Program (MultiTabPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
@@ -236,6 +236,10 @@
         <STATE NAME="KeyCode" TYPE="int" VALUE="78" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="0" />
     </WRAPPED_OPTION>
+    <WRAPPED_OPTION NAME="Highlight Backward Slice (DecompilePlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
+        <STATE NAME="KeyCode" TYPE="int" VALUE="75" />
+        <STATE NAME="Modifiers" TYPE="int" VALUE="0" />
+    </WRAPPED_OPTION>
     <WRAPPED_OPTION NAME="Zoom Out (FunctionGraphPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
         <STATE NAME="KeyCode" TYPE="int" VALUE="45" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="130" />
@@ -272,6 +276,10 @@
         <STATE NAME="KeyCode" TYPE="int" VALUE="78" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="0" />
     </WRAPPED_OPTION>
+    <WRAPPED_OPTION NAME="Toggle Expand/Collapse Data (CodeBrowserPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
+        <STATE NAME="KeyCode" TYPE="int" VALUE="32" />
+        <STATE NAME="Modifiers" TYPE="int" VALUE="0" />
+    </WRAPPED_OPTION>
     <WRAPPED_OPTION NAME="Select All Code Units (FunctionGraphPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
         <STATE NAME="KeyCode" TYPE="int" VALUE="65" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="130" />
@@ -280,9 +288,17 @@
         <STATE NAME="KeyCode" TYPE="int" VALUE="82" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="130" />
     </WRAPPED_OPTION>
+    <WRAPPED_OPTION NAME="Export to C (DecompilePlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
+        <STATE NAME="KeyCode" TYPE="int" VALUE="46" />
+        <STATE NAME="Modifiers" TYPE="int" VALUE="65" />
+    </WRAPPED_OPTION>
     <WRAPPED_OPTION NAME="Delete Symbols (SymbolTablePlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
         <STATE NAME="KeyCode" TYPE="int" VALUE="127" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="0" />
+    </WRAPPED_OPTION>
+    <WRAPPED_OPTION NAME="Find References To (Tool)" CLASS="ghidra.framework.options.WrappedKeyStroke">
+        <STATE NAME="KeyCode" TYPE="int" VALUE="70" />
+        <STATE NAME="Modifiers" TYPE="int" VALUE="195" />
     </WRAPPED_OPTION>
     <WRAPPED_OPTION NAME="Create Structure (DataPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
         <STATE NAME="KeyCode" TYPE="int" VALUE="91" />
@@ -307,10 +323,6 @@
     <WRAPPED_OPTION NAME="Open File (ProgramManagerPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
         <STATE NAME="KeyCode" TYPE="int" VALUE="79" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="130" />
-    </WRAPPED_OPTION>
-    <WRAPPED_OPTION NAME="Recently Used (Tool)" CLASS="ghidra.framework.options.WrappedKeyStroke">
-        <STATE NAME="KeyCode" TYPE="int" VALUE="89" />
-        <STATE NAME="Modifiers" TYPE="int" VALUE="0" />
     </WRAPPED_OPTION>
     <WRAPPED_OPTION NAME="Display Function Graph (FunctionGraphPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
         <STATE NAME="KeyCode" TYPE="int" VALUE="32" />
@@ -412,13 +424,13 @@
         <STATE NAME="KeyCode" TYPE="int" VALUE="71" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="130" />
     </WRAPPED_OPTION>
-    <WRAPPED_OPTION NAME="New Project Data Type Archive (DataTypeManagerPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
-        <STATE NAME="KeyCode" TYPE="int" VALUE="87" />
-        <STATE NAME="Modifiers" TYPE="int" VALUE="0" />
-    </WRAPPED_OPTION>
     <WRAPPED_OPTION NAME="Next Selected Range (NextPrevSelectedRangePlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
         <STATE NAME="KeyCode" TYPE="int" VALUE="162" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="130" />
+    </WRAPPED_OPTION>
+    <WRAPPED_OPTION NAME="New Project Data Type Archive (DataTypeManagerPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
+        <STATE NAME="KeyCode" TYPE="int" VALUE="87" />
+        <STATE NAME="Modifiers" TYPE="int" VALUE="0" />
     </WRAPPED_OPTION>
     <WRAPPED_OPTION NAME="Forward Refs (SelectRefsPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
         <STATE NAME="KeyCode" TYPE="int" VALUE="46" />
@@ -439,6 +451,10 @@
     <WRAPPED_OPTION NAME="Enable/Disable Byteviewer Editing (ByteViewerPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
         <STATE NAME="KeyCode" TYPE="int" VALUE="69" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="650" />
+    </WRAPPED_OPTION>
+    <WRAPPED_OPTION NAME="Find References To (SymbolTreePlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
+        <STATE NAME="KeyCode" TYPE="int" VALUE="70" />
+        <STATE NAME="Modifiers" TYPE="int" VALUE="195" />
     </WRAPPED_OPTION>
     <WRAPPED_OPTION NAME="Next Highlighted Range (NextPrevHighlightRangePlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
         <STATE NAME="KeyCode" TYPE="int" VALUE="48" />
@@ -479,10 +495,6 @@
     <WRAPPED_OPTION NAME="Next Label (NextPrevCodeUnitPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
         <STATE NAME="KeyCode" TYPE="int" VALUE="76" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="650" />
-    </WRAPPED_OPTION>
-    <WRAPPED_OPTION NAME="Auto Analyze (AutoAnalysisPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
-        <STATE NAME="KeyCode" TYPE="int" VALUE="65" />
-        <STATE NAME="Modifiers" TYPE="int" VALUE="0" />
     </WRAPPED_OPTION>
     <WRAPPED_OPTION NAME="Rerun Last Script (Tool)" CLASS="ghidra.framework.options.WrappedKeyStroke">
         <STATE NAME="KeyCode" TYPE="int" VALUE="82" />
@@ -534,6 +546,10 @@
     </WRAPPED_OPTION>
     <WRAPPED_OPTION NAME="Cycle: char,string,unicode (Tool)" CLASS="ghidra.framework.options.WrappedKeyStroke">
         <STATE NAME="KeyCode" TYPE="int" VALUE="222" />
+        <STATE NAME="Modifiers" TYPE="int" VALUE="0" />
+    </WRAPPED_OPTION>
+    <WRAPPED_OPTION NAME="Highlight Forward Slice (DecompilePlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
+        <STATE NAME="KeyCode" TYPE="int" VALUE="74" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="0" />
     </WRAPPED_OPTION>
     <WRAPPED_OPTION NAME="Previous Highlighted Range (NextPrevHighlightRangePlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
