@@ -50,6 +50,8 @@ Plugin 'majutsushi/tagbar'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+nnoremap <leader><TAB> :b#<CR>
+
 
 """ Vundle End """
 
