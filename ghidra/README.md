@@ -1,5 +1,11 @@
 # Ghidra keybindings for VIM/IDA-esque bindings
 
+## Install
+
+```
+Edit -> Tool Options -> KeyBindings -> Import
+```
+
 ## Vim
 
 ```
