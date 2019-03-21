@@ -28,12 +28,12 @@ Rename Symbol            : N
 Rename Function          : N
 
 Add Bookmark : M
-Show Bookmarks (BookmarkPlugin): B -> Alt+M
+Show Bookmarks (BookmarkPlugin): Alt+M
 
 Edit Data Type  : Y
 Retype Variable : Y
 
-Display Function Graph (FunctionGraphPlugin): _ -> SPACEBAR
+Display Function Graph (FunctionGraphPlugin): SPACEBAR
 
 ASCII Strings : A
 ```
