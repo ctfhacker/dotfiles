@@ -52,17 +52,24 @@ Plugin 'prabirshrestha/vim-lsp'
 Plugin 'prabirshrestha/asyncomplete.vim'
 Plugin 'prabirshrestha/asyncomplete-lsp.vim'
 
+" Browse ctags 
+Plugin 'majutsushi/tagbar'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+nnoremap <leader><TAB> :b#<CR>
+
 
 """ Vundle End """
 
-set t_Co=16
+set t_Co=256
 syntax enable
 set background=dark
 colorscheme solarized
+let g:solarized_termcolors=256
+" let g:solarized_termtrans = 1
 set nu
 
 nnoremap <leader><TAB> :b#<CR>
@@ -319,7 +326,6 @@ let g:asyncomplete_auto_popup = 1
 " smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 " xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-"
 let g:clang_format#style_options = {
             \ "AccessModifierOffset" : -4,
             \ "AllowShortIfStatementsOnASingleLine" : "true",
