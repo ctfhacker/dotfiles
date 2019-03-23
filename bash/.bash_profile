@@ -3,6 +3,7 @@ alias ls='exa -lh'
 alias l='exa -lh'
 alias ll='exa -lah'
 alias xxd='hexyl'
+alias tree='exa -la -T'
 alias sl=ls
 alias dc=cd
 alias i=ipython
@@ -42,15 +43,18 @@ alias eth='eval $(docker-machine env default); docker run -v /home/ctfhacker/eth
 alias moflow='eval $(docker-machine env default); docker run -v /home/ctfhacker/ctfs:/root/host-share --privileged -it --workdir=/moflow moflow/moflow-0.8'
 alias docker-restart='docker-machine restart default; eval $(docker-machine env default)'
 
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
+# alias pbcopy='xclip -selection clipboard'
+# alias pbpaste='xclip -selection clipboard -o'
 
 alias cgc='cd ~/ctfs/cgc; vagrant up; vagrant ssh'
 alias binja='cd ~/binaryninja; ./binaryninja'
 
-# export GOPATH=${HOME}/.go
-# export GOROOT=${HOME}/go
-export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
+# --Go--
+export GOPATH=$HOME/LocalCode/go
+export PATH=$PATH:$GOPATH/bin
+
+export GOROOT=`go env GOROOT` # b/c installed via Homebrew
+export PATH=$PATH:$GOROOT/bin
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/.virtualenv-project-home

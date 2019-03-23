@@ -43,6 +43,15 @@ Plugin 'cespare/vim-toml'
 " Auto character alignment in columns (:, = , ect) "
 Plugin 'godlygeek/tabular'
 
+" Go Vim
+Plugin 'fatih/vim-go'
+
+" Autocomplete
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'prabirshrestha/asyncomplete.vim'
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -57,6 +66,7 @@ colorscheme solarized
 set nu
 
 nnoremap <leader><TAB> :b#<CR>
+
 
 if executable('rg')
     set grepprg=rg\ --no-heading\ --vimgrep
@@ -95,11 +105,12 @@ nnoremap <leader>p oimport IPython; shell = IPython.terminal.embed.InteractiveSh
 " nnoremap <leader>bd :bp<CR>:bd#<CR>
  
 " Go Commands
-" nnoremap <leader>gr :GoRun<CR>
-" nnoremap <leader>gb :GoBuild<CR>
-" nnoremap <leader>gd :GoDecls<CR>
-" nnoremap <leader>gD :GoDeclsDir<CR>
-" nnoremap <leader>gi :GoInfo<CR>
+nnoremap <leader>gr :GoRun<CR>
+nnoremap <leader>gb :GoBuild<CR>
+nnoremap <leader>gt :GoTest<CR>
+nnoremap <leader>gd :GoDecls<CR>
+nnoremap <leader>gD :GoDeclsDir<CR>
+nnoremap <leader>gi :GoInfo<CR>
 
 " Rust Commands
 " nnoremap <leader>cb :!cargo build<CR>
@@ -110,10 +121,10 @@ set nobackup
 inoremap jj <ESC>
 inoremap jk <ESC>
 
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
+" noremap j gj
+" noremap k gk
+" noremap gj j
+" noremap gk k
 
 " Ignore files
 set wildignore+=*.a,*.o
@@ -279,6 +290,15 @@ let g:rustfmt_fail_silently = 0
 let g:rust_clip_command = 'xclip -selection clipboard'
 let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
 
+" AsyncComplete rules
+" Can now use TAB and SHIFT+TAB to maneuver around the autocomplete window
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+
+let g:asyncomplete_smart_completion = 1
+let g:asyncomplete_auto_popup = 1
+
 " rust-racer options
 " set hidden
 " let g:racer_experimental_completer = 1
@@ -313,6 +333,7 @@ let g:clang_format#style_options = {
 " nmap <Leader>C :ClangFormatAutoToggle<CR>
 " autocmd FileType c,cpp ClangFormatAutoEnable
 
+" Rust Language server
 if executable('rls')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'rls',
@@ -320,5 +341,44 @@ if executable('rls')
         \ 'whitelist': ['rust'],
         \ })
 endif 
+
+" Go language server
+if executable('gopls')
+    au User lsp_setup call lsp#register_server({
+            \ 'name': 'gopls',
+            \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
+            \ 'whitelist': ['go'],
+            \ })
+endif
+
+" Go language server
+if executable('go-langserver')
+    au User lsp_setup call lsp#register_server({
+            \ 'name': 'go-langserver',
+            \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
+            \ 'whitelist': ['go'],
+            \ })
+endif
+
+" Go language server
+if executable('bingo')
+    au User lsp_setup call lsp#register_server({
+            \ 'name': 'bingo',
+            \ 'cmd': {server_info->['bingo', '-mode', 'stdio']},
+            \ 'whitelist': ['go'],
+            \ })
+endif
+
+" Python language server
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
+
+set autowrite
 
 execute pathogen#infect()
