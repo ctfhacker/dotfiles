@@ -1,6 +1,6 @@
 [user]
-	name = thebarbershopper
-	email = cld251@gmail.com
+	name = randomlshb@gmail.com
+	email = randomlshb@gmail.com
 [alias]
     d = diff --word-diff
     s = status -s
@@ -23,3 +23,5 @@
 	editor = vim
 [credential]
 	helper = cache --timeout=9999999999
+[http]
+	sslVerify = false

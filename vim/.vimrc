@@ -52,6 +52,9 @@ Plugin 'prabirshrestha/vim-lsp'
 Plugin 'prabirshrestha/asyncomplete.vim'
 Plugin 'prabirshrestha/asyncomplete-lsp.vim'
 
+" Python LSP
+Plugin 'ryanolsonx/vim-lsp-python'
+
 " Browse ctags 
 Plugin 'majutsushi/tagbar'
 
