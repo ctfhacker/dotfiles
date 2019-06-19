@@ -34,9 +34,8 @@ alias ipa='ip a'
 
 export PYENV_ROOT="${HOME}/.pyenv"
 
-alias et-pull='eval $(docker-machine env default); docker pull ctfhacker/epictreasure'
-alias et='eval $(docker-machine env default); docker run -v /Users/user/vmshare:/root/vmshare -v /Users/user/ctfs:/root/host-share -v /tmp/.X11-unix:/tmp/.X11-unix --rm --privileged -it --workdir=/root ctfhacker/epictreasure'
-alias et-test='eval $(docker-machine env default); docker run -v /Users/user/ctfs:/root/host-share -v /tmp/.X11-unix:/tmp/.X11-unix --rm --privileged -it --workdir=/root et-test'
+alias et16='eval $(docker-machine env default); docker run -v /Users/user/vmshare:/root/vmshare -v /Users/user/ctfs:/root/host-share -v /tmp/.X11-unix:/tmp/.X11-unix --rm --privileged -it --workdir=/root ctfhacker/epictreasure:16.04'
+alias et19='eval $(docker-machine env default); docker run -v /Users/user/vmshare:/root/vmshare -v /Users/user/ctfs:/root/host-share -v /tmp/.X11-unix:/tmp/.X11-unix --rm --privileged -it --workdir=/root ctfhacker/epictreasure:19.04'
 alias wasabi='docker run --rm -t -v /Users/user/ctfs:/root/host-share wasabi'
 
 alias eth='eval $(docker-machine env default); docker run -v /home/ctfhacker/ethdev:/root/host-share --rm --privileged -it --workdir=/root ethylene'
