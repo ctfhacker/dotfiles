@@ -1,10 +1,10 @@
 source ~/.profile
 # Personal commands
-alias ls='exa -lh'
-alias l='exa -lh'
-alias ll='exa -lah'
+alias ls='lsd -h'
+alias l='lsd -h'
+alias ll='lsd -lah'
 alias xxd='hexyl'
-alias tree='exa -la -T'
+alias tree='lsd -la --tree'
 alias sl=ls
 alias dc=cd
 alias i=ipython

@@ -12,14 +12,9 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-" Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) "
-Plugin 'w0rp/ale'
 
 " Status bar at bottom of window "
 Plugin 'itchyny/lightline.vim'
@@ -30,9 +25,6 @@ Plugin 'machakann/vim-highlightedyank'
 " Fuzzy searching "
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
-
-" Rust Vim "
-Plugin 'rust-lang/rust.vim'
 
 " Display function signatures " 
 Plugin 'Shougo/echodoc.vim'
@@ -46,17 +38,11 @@ Plugin 'godlygeek/tabular'
 " Go Vim
 Plugin 'fatih/vim-go'
 
-" Autocomplete
-Plugin 'prabirshrestha/async.vim'
-Plugin 'prabirshrestha/vim-lsp'
-Plugin 'prabirshrestha/asyncomplete.vim'
-Plugin 'prabirshrestha/asyncomplete-lsp.vim'
-
-" Python LSP
-Plugin 'ryanolsonx/vim-lsp-python'
-
 " Browse ctags 
 Plugin 'majutsushi/tagbar'
+
+" Intellisense engine for vim8
+Plugin 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -115,12 +101,12 @@ nnoremap <leader>p oimport IPython; shell = IPython.terminal.embed.InteractiveSh
 " nnoremap <leader>bd :bp<CR>:bd#<CR>
  
 " Go Commands
-nnoremap <leader>gr :GoRun<CR>
-nnoremap <leader>gb :GoBuild<CR>
-nnoremap <leader>gt :GoTest<CR>
-nnoremap <leader>gd :GoDecls<CR>
-nnoremap <leader>gD :GoDeclsDir<CR>
-nnoremap <leader>gi :GoInfo<CR>
+" au FileType go nnoremap <leader>gr :GoRun<CR>
+" au FileType go nnoremap <leader>gb :GoBuild<CR>
+" au FileType go nnoremap <leader>gt :GoTest<CR>
+" au FileType go nnoremap <leader>gd :GoDecls<CR>
+" au FileType go nnoremap <leader>gD :GoDeclsDir<CR>
+" au FileType go nnoremap <leader>gi :GoInfo<CR>
 
 " Rust Commands
 " nnoremap <leader>cb :!cargo build<CR>
@@ -164,6 +150,10 @@ set wildmenu
 
 set ruler
 set cmdheight=2
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
@@ -184,7 +174,10 @@ set showmatch
 " set list listchars=tab:>-,trail:.,extends:>
 
 set laststatus=2
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
@@ -306,28 +299,59 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 
-let g:asyncomplete_smart_completion = 1
-let g:asyncomplete_auto_popup = 1
+" let g:asyncomplete_smart_completion = 1
+" let g:asyncomplete_auto_popup = 1
 
-" rust-racer options
-" set hidden
-" let g:racer_experimental_completer = 1
-" let g:racer_cmd = "~/.cargo/bin/racer"
-" au FileType rust nmap gd <Plug>(rust-def)
-" au FileType rust nmap gs <Plug>(rust-def-split)
-" au FileType rust nmap gx <Plug>(rust-def-vertical)
-" au FileType rust nmap gr <Plug>(rust-doc)
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-" Supertab
-" let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-" let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-" let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 
-" Plugin key-mappings.
-" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" xmap <C-k>     <Plug>(neosnippet_expand_target)
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 let g:clang_format#style_options = {
             \ "AccessModifierOffset" : -4,
