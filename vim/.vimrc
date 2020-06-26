@@ -42,7 +42,8 @@ Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
 
 " Intellisense engine for vim8
-Plugin 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" Plugin 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plugin 'dense-analysis/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -170,6 +171,7 @@ set incsearch
 set ignorecase
 set hlsearch
 set showmatch
+set relativenumber
 
 " set list listchars=tab:>-,trail:.,extends:>
 
@@ -283,7 +285,7 @@ let g:ale_rust_cargo_check__all_targets = 1
 let g:ale_fix_on_save = 1 
 let g:ale_completion_enabled = 1 
 
-let g:syntastic_rust_checkers = ['cargo']
+" let g:syntastic_rust_checkers = ['cargo']
 " let g:rustfmt_command = 'rustup run stable rustfmt'
 
 let g:rustfmt_command = "rustfmt +nightly"
@@ -309,7 +311,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" nnoremap <silent> K :caloc
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)

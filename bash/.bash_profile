@@ -50,11 +50,11 @@ alias cgc='cd ~/ctfs/cgc; vagrant up; vagrant ssh'
 alias binja='cd ~/binaryninja; ./binaryninja'
 
 # --Go--
-export GOPATH=$HOME/LocalCode/go
-export PATH=$PATH:$GOPATH/bin
+# export GOPATH=$HOME/LocalCode/go
+# export PATH=$PATH:$GOPATH/bin
 
-export GOROOT=`go env GOROOT` # b/c installed via Homebrew
-export PATH=$PATH:$GOROOT/bin
+# export GOROOT=`go env GOROOT` # b/c installed via Homebrew
+# export PATH=$PATH:$GOROOT/bin
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/.virtualenv-project-home
@@ -82,5 +82,4 @@ source $HOME/.cargo/env
 source ~/.bashrc
 
 export PATH="$HOME/.cargo/bin:$PATH"
-
 export PATH="$PATH:/mnt/c/Program Files/IDA 7.0"
