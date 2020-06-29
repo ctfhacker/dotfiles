@@ -16,6 +16,10 @@ alias cp='cp -i'
 # alias cat='bat --theme "Monokai Extended" --paging never'
 alias cat='bat --theme "Monokai Extended"'
 
+
+alias windev32='cd /mnt/c/users/rando; cmd.ese /k "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64_x86'
+alias windev='cd /mnt/c/users/rando; cmd.exe /k "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsx86_amd64.bat"'
+
 # Reload bash_profile
 alias reload='source ~/.bash_profile'
 
@@ -48,6 +52,8 @@ alias docker-restart='docker-machine restart default; eval $(docker-machine env 
 
 alias cgc='cd ~/ctfs/cgc; vagrant up; vagrant ssh'
 alias binja='cd ~/binaryninja; ./binaryninja'
+
+# alias vim='/mnt/c/Program\ Files\ \(x86\)/vim/vim81/gvim.exe'
 
 # --Go--
 # export GOPATH=$HOME/LocalCode/go

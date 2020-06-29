@@ -38,12 +38,15 @@ Plugin 'godlygeek/tabular'
 " Go Vim
 Plugin 'fatih/vim-go'
 
+" Rust Vim
+Plugin 'rust-lang/rust.vim'
+
 " Browse ctags 
 Plugin 'majutsushi/tagbar'
 
 " Intellisense engine for vim8
-" Plugin 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-Plugin 'dense-analysis/ale'
+Plugin 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" Plugin 'dense-analysis/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -276,14 +279,15 @@ let g:go_highlight_operators = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 
-let g:ale_sign_column_always = 1 
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_enter = 0
-let g:ale_rust_cargo_use_check = 1
-let g:ale_rust_cargo_check__all_targets = 1
-let g:ale_fix_on_save = 1 
-let g:ale_completion_enabled = 1 
+" let g:ale_linters = {'rust': ['analyzer']}
+" let g:ale_sign_column_always = 1 
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_save = 1
+" let g:ale_lint_on_enter = 0
+" let g:ale_rust_cargo_use_check = 1
+" let g:ale_rust_cargo_check__all_targets = 1
+" let g:ale_fix_on_save = 1 
+" let g:ale_completion_enabled = 1 
 
 " let g:syntastic_rust_checkers = ['cargo']
 " let g:rustfmt_command = 'rustup run stable rustfmt'
@@ -416,4 +420,4 @@ endif
 
 set autowrite
 
-execute pathogen#infect()
+" execute pathogen#infect()

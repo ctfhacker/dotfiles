@@ -1,6 +1,8 @@
 [user]
-	name = randomlshb@gmail.com
+	name = ctfhacker
 	email = randomlshb@gmail.com
+	email = cld251@gmail.com
+	email = cld251@gmail.com
 [alias]
     d = diff --word-diff
     s = status -s
@@ -21,6 +23,7 @@
 	ui = true
 [core]
 	editor = vim
+	eol = lf
 [credential]
 	helper = cache --timeout=9999999999
 [http]
