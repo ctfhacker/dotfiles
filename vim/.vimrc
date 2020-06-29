@@ -60,6 +60,8 @@ colorscheme solarized
 let g:solarized_termcolors=256
 " let g:solarized_termtrans = 1
 set nu
+set relativenumber
+set colorcolumn=100
 
 nnoremap <leader><TAB> :b#<CR>
 
@@ -88,8 +90,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Fancy IPython
-nnoremap <leader>p oimport IPython; shell = IPython.terminal.embed.InteractiveShellEmbed(); shell.mainloop()<ESC>
 
 " Command output
 " nnoremap <leader>; :r!
@@ -286,18 +286,18 @@ let g:ale_completion_enabled = 1
 let g:syntastic_rust_checkers = ['cargo']
 " let g:rustfmt_command = 'rustup run stable rustfmt'
 
-let g:rustfmt_command = "rustfmt +nightly"
-let g:rustfmt_autosave = 1
-let g:rustfmt_emit_files = 1
-let g:rustfmt_fail_silently = 0
-let g:rust_clip_command = 'xclip -selection clipboard'
-let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
+" let g:rustfmt_command = "rustfmt +nightly"
+" let g:rustfmt_autosave = 1
+" let g:rustfmt_emit_files = 1
+" let g:rustfmt_fail_silently = 0
+" let g:rust_clip_command = 'xclip -selection clipboard'
+" let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
 
 " AsyncComplete rules
 " Can now use TAB and SHIFT+TAB to maneuver around the autocomplete window
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"n
 
 " let g:asyncomplete_smart_completion = 1
 " let g:asyncomplete_auto_popup = 1
@@ -411,6 +411,9 @@ if executable('pyls')
         \ 'whitelist': ['python'],
         \ })
 endif
+
+" Fancy IPython
+nnoremap <leader>p oimport IPython; shell = IPython.terminal.embed.InteractiveShellEmbed(); shell.mainloop()<ESC>
 
 set autowrite
 
