@@ -66,6 +66,7 @@ let g:solarized_termcolors=256
 set nu
 
 nnoremap <leader><TAB> :b#<CR>
+nnoremap <leader>b :!./build.sh<CR>
 
 
 if executable('rg')
@@ -113,10 +114,17 @@ nnoremap <leader>p oimport IPython; shell = IPython.terminal.embed.InteractiveSh
 " au FileType go nnoremap <leader>gi :GoInfo<CR>
 
 " Rust Commands
-" nnoremap <leader>cb :!cargo build<CR>
+nnoremap <leader>cb :!cargo build<CR>
+nnoremap <leader>cr :!cargo build<CR>
 
-set noswapfile
-set nobackup
+set swapfile
+set backup
+
+if has('persistent_undo') 
+    silent !mkdir -p $HOME/.vimundo
+    set undofile
+    set undodir=$HOME/.vimundo
+endif
 
 inoremap jj <ESC>
 inoremap jk <ESC>
@@ -175,6 +183,14 @@ set ignorecase
 set hlsearch
 set showmatch
 set relativenumber
+set colorcolumn=90
+set textwidth=89
+set wrapmargin=90
+
+set backupdir=~/.vim_backup
+set directory=~/.vim_backup
+
+autocmd BufEnter * :syntax sync fromstart
 
 " set list listchars=tab:>-,trail:.,extends:>
 
@@ -202,7 +218,7 @@ au BufNewFile *.go,*.py,*.pyw,*.c,*.h set fileformat=unix
 let python_highlight_all=1
 syntax on
 
-" au BufRead,BufNewFile *.go,*.py,*.py match ErrorMsg '\%>95v.\+'
+au BufRead,BufNewFile *.rs setlocal textwidth=89
 
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
@@ -259,6 +275,9 @@ let g:netrw_winsize=60
 nnoremap ; :
 nnoremap : ;
 
+" Reformat the current line using the textwidth
+nnoremap Q gqgq
+
 let g:incpy#Name = "internal-python"
 let g:Program = ""
 let g:WindowRatio = 1.0/8
@@ -292,10 +311,10 @@ let g:go_highlight_operators = 1
 " let g:syntastic_rust_checkers = ['cargo']
 " let g:rustfmt_command = 'rustup run stable rustfmt'
 
-let g:rustfmt_command = "rustfmt +nightly"
-let g:rustfmt_autosave = 1
-let g:rustfmt_emit_files = 1
-let g:rustfmt_fail_silently = 0
+" let g:rustfmt_command = "rustfmt +nightly"
+" let g:rustfmt_autosave = 1
+" let g:rustfmt_emit_files = 1
+" let g:rustfmt_fail_silently = 0
 let g:rust_clip_command = 'xclip -selection clipboard'
 let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
 
@@ -373,13 +392,13 @@ let g:clang_format#style_options = {
 " autocmd FileType c,cpp ClangFormatAutoEnable
 
 " Rust Language server
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
-        \ 'whitelist': ['rust'],
-        \ })
-endif 
+" if executable('rls')
+    " au User lsp_setup call lsp#register_server({
+        " \ 'name': 'rls',
+        " \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        " \ 'whitelist': ['rust'],
+        " \ })
+" endif 
 
 " Go language server
 if executable('gopls')
