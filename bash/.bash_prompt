@@ -63,7 +63,7 @@ git_branch () {
     echo -e  "on $YELLOW$(parse_git_branch)$BASE0"
 }
 
-PS1="\[${BOLD}${CYAN}\]\u \[$BASE0\]at \[$CYAN\]\h \[$BASE0\]in \[$BLUE\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$YELLOW\]\$(parse_git_branch)\[$BASE0\]\n\$ \[$RESET\]"
+PS1="\[${BOLD}${CYAN}\]\u \[$BASE0\]at \[$CYAN\]\h \[$BASE0\]in \[$BLUE\]\w\[$BASE0\]\[$BASE0\]\n\$ \[$RESET\]"
 
 function prompt {
     PS1='$ '

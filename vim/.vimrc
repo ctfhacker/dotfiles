@@ -38,11 +38,15 @@ Plugin 'godlygeek/tabular'
 " Go Vim
 Plugin 'fatih/vim-go'
 
+" Rust Vim
+Plugin 'rust-lang/rust.vim'
+
 " Browse ctags 
 Plugin 'majutsushi/tagbar'
 
 " Intellisense engine for vim8
 Plugin 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" Plugin 'dense-analysis/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -64,6 +68,7 @@ set relativenumber
 set colorcolumn=100
 
 nnoremap <leader><TAB> :b#<CR>
+nnoremap <leader>b :!./build.sh<CR>
 
 
 if executable('rg')
@@ -109,10 +114,17 @@ nnoremap <C-H> <C-W><C-H>
 " au FileType go nnoremap <leader>gi :GoInfo<CR>
 
 " Rust Commands
-" nnoremap <leader>cb :!cargo build<CR>
+nnoremap <leader>cb :!cargo build<CR>
+nnoremap <leader>cr :!cargo build<CR>
 
-set noswapfile
-set nobackup
+set swapfile
+set backup
+
+if has('persistent_undo') 
+    silent !mkdir -p $HOME/.vimundo
+    set undofile
+    set undodir=$HOME/.vimundo
+endif
 
 inoremap jj <ESC>
 inoremap jk <ESC>
@@ -170,6 +182,15 @@ set incsearch
 set ignorecase
 set hlsearch
 set showmatch
+set relativenumber
+set colorcolumn=90
+set textwidth=89
+set wrapmargin=90
+
+set backupdir=~/.vim_backup
+set directory=~/.vim_backup
+
+autocmd BufEnter * :syntax sync fromstart
 
 " set list listchars=tab:>-,trail:.,extends:>
 
@@ -197,7 +218,7 @@ au BufNewFile *.go,*.py,*.pyw,*.c,*.h set fileformat=unix
 let python_highlight_all=1
 syntax on
 
-" au BufRead,BufNewFile *.go,*.py,*.py match ErrorMsg '\%>95v.\+'
+au BufRead,BufNewFile *.rs setlocal textwidth=89
 
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
@@ -254,6 +275,9 @@ let g:netrw_winsize=60
 nnoremap ; :
 nnoremap : ;
 
+" Reformat the current line using the textwidth
+nnoremap Q gqgq
+
 let g:incpy#Name = "internal-python"
 let g:Program = ""
 let g:WindowRatio = 1.0/8
@@ -274,16 +298,17 @@ let g:go_highlight_operators = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 
-let g:ale_sign_column_always = 1 
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_enter = 0
-let g:ale_rust_cargo_use_check = 1
-let g:ale_rust_cargo_check__all_targets = 1
-let g:ale_fix_on_save = 1 
-let g:ale_completion_enabled = 1 
+" let g:ale_linters = {'rust': ['analyzer']}
+" let g:ale_sign_column_always = 1 
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_save = 1
+" let g:ale_lint_on_enter = 0
+" let g:ale_rust_cargo_use_check = 1
+" let g:ale_rust_cargo_check__all_targets = 1
+" let g:ale_fix_on_save = 1 
+" let g:ale_completion_enabled = 1 
 
-let g:syntastic_rust_checkers = ['cargo']
+" let g:syntastic_rust_checkers = ['cargo']
 " let g:rustfmt_command = 'rustup run stable rustfmt'
 
 " let g:rustfmt_command = "rustfmt +nightly"
@@ -309,7 +334,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" nnoremap <silent> K :caloc
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -367,13 +392,13 @@ let g:clang_format#style_options = {
 " autocmd FileType c,cpp ClangFormatAutoEnable
 
 " Rust Language server
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
-        \ 'whitelist': ['rust'],
-        \ })
-endif 
+" if executable('rls')
+    " au User lsp_setup call lsp#register_server({
+        " \ 'name': 'rls',
+        " \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        " \ 'whitelist': ['rust'],
+        " \ })
+" endif 
 
 " Go language server
 if executable('gopls')
@@ -417,4 +442,4 @@ nnoremap <leader>p oimport IPython; shell = IPython.terminal.embed.InteractiveSh
 
 set autowrite
 
-execute pathogen#infect()
+" execute pathogen#infect()

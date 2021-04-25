@@ -16,6 +16,10 @@ alias cp='cp -i'
 # alias cat='bat --theme "Monokai Extended" --paging never'
 alias cat='bat --theme "Monokai Extended"'
 
+
+alias windev32='cd /mnt/c/users/rando; cmd.ese /k "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64_x86'
+alias windev='cd /mnt/c/users/rando; cmd.exe /k "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsx86_amd64.bat"'
+
 # Reload bash_profile
 alias reload='source ~/.bash_profile'
 
@@ -49,12 +53,14 @@ alias docker-restart='docker-machine restart default; eval $(docker-machine env 
 alias cgc='cd ~/ctfs/cgc; vagrant up; vagrant ssh'
 alias binja='cd ~/binaryninja; ./binaryninja'
 
-# --Go--
-export GOPATH=$HOME/LocalCode/go
-export PATH=$PATH:$GOPATH/bin
+# alias vim='/mnt/c/Program\ Files\ \(x86\)/vim/vim81/gvim.exe'
 
-export GOROOT=`go env GOROOT` # b/c installed via Homebrew
-export PATH=$PATH:$GOROOT/bin
+# --Go--
+# export GOPATH=$HOME/LocalCode/go
+# export PATH=$PATH:$GOPATH/bin
+
+# export GOROOT=`go env GOROOT` # b/c installed via Homebrew
+# export PATH=$PATH:$GOROOT/bin
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/.virtualenv-project-home
@@ -82,5 +88,4 @@ source $HOME/.cargo/env
 source ~/.bashrc
 
 export PATH="$HOME/.cargo/bin:$PATH"
-
 export PATH="$PATH:/mnt/c/Program Files/IDA 7.0"
