@@ -128,6 +128,8 @@ endif
 
 inoremap jj <ESC>
 inoremap jk <ESC>
+inoremap <C-j> <ESC>
+inoremap <C-k> <ESC>
 
 " noremap j gj
 " noremap k gk
