@@ -45,7 +45,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'majutsushi/tagbar'
 
 " Intellisense engine for vim8
-Plugin 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 " Plugin 'dense-analysis/ale'
 
 " All of your Plugins must be added before the following line
@@ -117,14 +117,18 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>cb :!cargo build<CR>
 nnoremap <leader>cr :!cargo build<CR>
 
-set swapfile
-set backup
+" set swapfile
+" set backup
 
 if has('persistent_undo') 
     silent !mkdir -p $HOME/.vimundo
     set undofile
     set undodir=$HOME/.vimundo
 endif
+
+silent !mkdir -p $HOME/.vim_backup
+set backupdir=~/.vim_backup
+set directory=~/.vim_backup
 
 inoremap jj <ESC>
 inoremap jk <ESC>
@@ -189,8 +193,6 @@ set colorcolumn=90
 set textwidth=89
 set wrapmargin=90
 
-set backupdir=~/.vim_backup
-set directory=~/.vim_backup
 
 autocmd BufEnter * :syntax sync fromstart
 
