@@ -1,8 +1,8 @@
 source ~/.profile
 # Personal commands
-alias ls='lsd -h'
-alias l='lsd -h'
-alias ll='lsd -lah'
+alias ls='exa'
+alias l='exa'
+alias ll='exa -la'
 alias xxd='hexyl'
 alias tree='lsd -la --tree'
 alias sl=ls
@@ -83,9 +83,11 @@ if [ -f $HOME/.cargo/env ]; then
     source $HOME/.cargo/env
 fi
 
+setxkbmap -option "ctrl:nocaps"
 
 source $HOME/.cargo/env
 source ~/.bashrc
 
-export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:/mnt/c/Program Files/IDA 7.0"
+export PATH="$PATH:/home/user/clang/bin"
+source "$HOME/.cargo/env"

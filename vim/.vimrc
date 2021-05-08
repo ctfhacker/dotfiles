@@ -1,5 +1,4 @@
 " set nocompatible
-" filetype plugin indent on
 
 " Gotta take this from Spacemacs - so good
 let mapleader = "\<Space>"
@@ -50,6 +49,7 @@ Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+syntax enable
 filetype plugin indent on    " required
 
 nnoremap <leader><TAB> :b#<CR>
@@ -58,7 +58,6 @@ nnoremap <leader><TAB> :b#<CR>
 """ Vundle End """
 
 set t_Co=256
-syntax enable
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
@@ -193,6 +192,9 @@ set colorcolumn=90
 set textwidth=89
 set wrapmargin=90
 
+silent !mkdir -p $HOME/.vim_backup
+set backupdir=~/.vim_backup
+set directory=~/.vim_backup
 
 autocmd BufEnter * :syntax sync fromstart
 
@@ -206,9 +208,6 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
-if exists('$TMUX')  " Support resizing in tmux
-    set ttymouse=xterm2
-endif
 
 highlight BadWhitespace ctermbg=red guibg=red
 
@@ -331,11 +330,19 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " let g:asyncomplete_smart_completion = 1
 " let g:asyncomplete_auto_popup = 1
 
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" Use <TAB> for selections ranges.
+nmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " Use K to show documentation in preview window
 " nnoremap <silent> K :caloc
@@ -445,5 +452,3 @@ endif
 nnoremap <leader>p oimport IPython; shell = IPython.terminal.embed.InteractiveShellEmbed(); shell.mainloop()<ESC>
 
 set autowrite
-
-" execute pathogen#infect()
