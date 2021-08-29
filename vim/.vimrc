@@ -43,6 +43,9 @@ Plugin 'rust-lang/rust.vim'
 " Browse ctags 
 Plugin 'majutsushi/tagbar'
 
+" Ctrl-P
+Plugin 'ctrlpvim/ctrlp.vim'
+
 " Intellisense engine for vim8
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 " Plugin 'dense-analysis/ale'
@@ -80,7 +83,7 @@ endif
 " nnoremap <leader>/ :Unite -start-insert line<CR>
 
 " CtrlP
-" nnoremap <leader>/ :CtrlPBuffer<CR>
+nnoremap <leader>/ :CtrlPBuffer<CR>
 " nnoremap <leader>e :CtrlP<CR>
 " nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 " let g:ctrlp_show_hidden = 1
@@ -114,7 +117,7 @@ nnoremap <C-H> <C-W><C-H>
 
 " Rust Commands
 nnoremap <leader>cb :!cargo build<CR>
-nnoremap <leader>cr :!cargo build<CR>
+nnoremap <leader>cr :!cargo run<CR>
 
 " set swapfile
 " set backup

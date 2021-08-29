@@ -53,7 +53,7 @@ alias docker-restart='docker-machine restart default; eval $(docker-machine env 
 alias cgc='cd ~/ctfs/cgc; vagrant up; vagrant ssh'
 alias binja='cd ~/binaryninja; ./binaryninja'
 
-# alias vim='/mnt/c/Program\ Files\ \(x86\)/vim/vim81/gvim.exe'
+alias vim=nvim
 
 # --Go--
 # export GOPATH=$HOME/LocalCode/go
@@ -65,6 +65,7 @@ alias binja='cd ~/binaryninja; ./binaryninja'
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/.virtualenv-project-home
 
+# --Python--
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
@@ -82,6 +83,8 @@ fi
 if [ -f $HOME/.cargo/env ]; then 
     source $HOME/.cargo/env
 fi
+
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 setxkbmap -option "ctrl:nocaps"
 
