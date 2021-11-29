@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
+# Install apt packages
+sudo apt install -y stow neovim tmux git cmake htop pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+
 # Install config
 for d in $(ls); do stow $d; done
 
 ## INSTALL coc.nvim
 
-set -o nounset    # error when referencing undefined variable
-set -o errexit    # exit when command fails
+# set -o nounset    # error when referencing undefined variable
+# set -o errexit    # exit when command fails
 
 # Install latest nodejs
 if [ ! -x "$(command -v node)" ]; then
@@ -37,4 +40,9 @@ npm install coc-snippets --global-style --ignore-scripts --no-bin-links --no-pac
 # Install Rust and binaries
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-~/.cargo/bin/cargo install git-delta ripgrep lsd fd-find hexyl bat exa
+# Install Rust utilities
+~/.cargo/bin/cargo install git-delta ripgrep lsd fd-find hexyl bat exa alacritty
+
+# Install vim plugins
+/usr/bin/nvim +PluginInstall
+
