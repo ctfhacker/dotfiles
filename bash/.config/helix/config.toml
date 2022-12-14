@@ -5,6 +5,7 @@ line-number = "relative"
 mouse = false
 auto-pairs = false
 rulers = [100]
+true-color = true
 
 [keys.normal]
 "C-s" = "split_selection_on_newline"
