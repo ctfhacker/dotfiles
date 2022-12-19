@@ -48,6 +48,8 @@ j = { k = "normal_mode" }
 
 "{" = ["extend_to_line_bounds", "goto_prev_paragraph"]
 "}" = ["extend_to_line_bounds", "goto_next_paragraph"]
+H = "goto_first_nonwhitespace"
+L = "goto_line_end"
 G = "goto_file_end"
 D = ["extend_to_line_bounds", "delete_selection", "normal_mode"]
 C = ["goto_line_start", "extend_to_line_bounds", "change_selection"]
