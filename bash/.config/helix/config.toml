@@ -7,24 +7,28 @@ auto-pairs = false
 rulers = [100]
 true-color = true
 
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
 [keys.normal]
 "C-s" = "split_selection_on_newline"
 # "C-l" = "increment"
 # "C-h" = "decrement"
 "C-r" = "redo"
+"%" = "match_brackets"
 
 # Some nice Helix stuff
-C-h = "shrink_selection"
-C-l = "expand_selection"
-C-k = "select_prev_sibling"
-C-j = "select_next_sibling"
+# C-h = "shrink_selection"
+# C-l = "expand_selection"
+# C-k = "select_prev_sibling"
+# C-j = "select_next_sibling"
 
 C-l = "select_next_sibling"
-D = "kill_to_line_end"
+D = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
 H = "goto_first_nonwhitespace"
 L = "goto_line_end"
 G = "goto_file_end"
-P = ["paste_clipboard_before", "collapse_selection"]
 V = ["select_mode", "extend_to_line_bounds"]
 "space" = { "tab" = ":buffer-previous" }
 
@@ -43,15 +47,12 @@ x = ["extend_line_below", "select_mode"]
 j = { k = "normal_mode" }
 
 [keys.select]
-# Map `jk` to go back to normal mode
-j = { k = "normal_mode" }
-
 "{" = ["extend_to_line_bounds", "goto_prev_paragraph"]
 "}" = ["extend_to_line_bounds", "goto_next_paragraph"]
 H = "goto_first_nonwhitespace"
 L = "goto_line_end"
 G = "goto_file_end"
-D = ["extend_to_line_bounds", "delete_selection", "normal_mode"]
+D = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
 C = ["goto_line_start", "extend_to_line_bounds", "change_selection"]
 "%" = "match_brackets"
 S = "surround_add" # Basically 99% of what I use vim-surround for

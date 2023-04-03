@@ -12,6 +12,14 @@ comment-token = "//"
 language-server = { command = "rust-analyzer" }
 indent = { tab-width = 4, unit = "    " }
 formatter = { command = "rustfmt +nightly" }
+diagnostic-severity = "Warning"
+
+[language.config.check]
+command = "clippy"
+extraArgs = ["--" , 
+    "--deny", "clippy::pedantic", 
+    "--allow", "clippy::unusual_byte_groupings"
+]
 
 [language.auto-pairs]
 '(' = ')'
@@ -154,7 +162,7 @@ source = { git = "https://github.com/tree-sitter/tree-sitter-json", rev = "65bce
 name = "c"
 scope = "source.c"
 injection-regex = "c"
-file-types = ["c"] # TODO: ["h"]
+file-types = ["c", "cpp", "h"]
 roots = []
 comment-token = "//"
 language-server = { command = "clangd" }
@@ -187,42 +195,42 @@ args = { console = "internalConsole", attachCommands = [ "platform select remote
 name = "c"
 source = { git = "https://github.com/tree-sitter/tree-sitter-c", rev = "7175a6dd5fc1cee660dce6fe23f6043d75af424a" }
 
-[[language]]
-name = "cpp"
-scope = "source.cpp"
-injection-regex = "cpp"
-file-types = ["cc", "hh", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino"]
-roots = []
-comment-token = "//"
-language-server = { command = "clangd" }
-indent = { tab-width = 2, unit = "  " }
+# [[language]]
+# name = "cpp"
+# # scope = "source.cpp"
+# injection-regex = "cpp"
+# file-types = ["cc", "hh", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino"]
+# roots = []
+# comment-token = "//"
+# language-server = { command = "clangd" }
+# indent = { tab-width = 2, unit = "  " }
 
-[language.debugger]
-name = "lldb-vscode"
-transport = "stdio"
-command = "lldb-vscode"
+# [language.debugger]
+# name = "lldb-vscode"
+# transport = "stdio"
+# command = "lldb-vscode"
 
-[[language.debugger.templates]]
-name = "binary"
-request = "launch"
-completion = [ { name = "binary", completion = "filename" } ]
-args = { console = "internalConsole", program = "{0}" }
+# [[language.debugger.templates]]
+# name = "binary"
+# request = "launch"
+# completion = [ { name = "binary", completion = "filename" } ]
+# args = { console = "internalConsole", program = "{0}" }
 
-[[language.debugger.templates]]
-name = "attach"
-request = "attach"
-completion = [ "pid" ]
-args = { console = "internalConsole", pid = "{0}" }
+# [[language.debugger.templates]]
+# name = "attach"
+# request = "attach"
+# completion = [ "pid" ]
+# args = { console = "internalConsole", pid = "{0}" }
 
-[[language.debugger.templates]]
-name = "gdbserver attach"
-request = "attach"
-completion = [ { name = "lldb connect url", default = "connect://localhost:3333" }, { name = "file", completion = "filename" }, "pid" ]
-args = { console = "internalConsole", attachCommands = [ "platform select remote-gdb-server", "platform connect {0}", "file {1}", "attach {2}" ] }
+# [[language.debugger.templates]]
+# name = "gdbserver attach"
+# request = "attach"
+# completion = [ { name = "lldb connect url", default = "connect://localhost:3333" }, { name = "file", completion = "filename" }, "pid" ]
+# args = { console = "internalConsole", attachCommands = [ "platform select remote-gdb-server", "platform connect {0}", "file {1}", "attach {2}" ] }
 
-[[grammar]]
-name = "cpp"
-source = { git = "https://github.com/tree-sitter/tree-sitter-cpp", rev = "d5e90fba898f320db48d81ddedd78d52c67c1fed" }
+# [[grammar]]
+# name = "cpp"
+# source = { git = "https://github.com/tree-sitter/tree-sitter-cpp", rev = "d5e90fba898f320db48d81ddedd78d52c67c1fed" }
 
 [[language]]
 name = "c-sharp"
@@ -1046,7 +1054,7 @@ file-types = ["COMMIT_EDITMSG"]
 comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
 rulers = [50, 72]
-max-line-length = 72
+text-width = 72
 
 [[grammar]]
 name = "git-commit"
