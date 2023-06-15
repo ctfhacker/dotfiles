@@ -7,9 +7,9 @@ auto-pairs = false
 rulers = [100]
 true-color = true
 
-[editor.lsp]
-display-messages = true
-display-inlay-hints = true
+# [editor.lsp]
+# display-messages = true
+# display-inlay-hints = true
 
 [keys.normal]
 "C-s" = "split_selection_on_newline"

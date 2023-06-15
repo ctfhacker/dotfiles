@@ -53,7 +53,7 @@ alias docker-restart='docker-machine restart default; eval $(docker-machine env 
 alias cgc='cd ~/ctfs/cgc; vagrant up; vagrant ssh'
 alias binja='cd ~/binaryninja; ./binaryninja'
 
-alias vim=nvim
+alias vim=hx
 
 # --Go--
 # export GOPATH=$HOME/LocalCode/go
@@ -89,8 +89,11 @@ export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 setxkbmap -option "ctrl:nocaps"
 
 source $HOME/.cargo/env
-source ~/.bashrc
 
+export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
 export PATH="$PATH:/mnt/c/Program Files/IDA 7.0"
 export PATH="$PATH:/home/user/clang/bin"
-source "$HOME/.cargo/env"
+export PATH="$PATH:/home/user/zig"
+export PATH="$PATH:/home/user/workspace/zls/zig-out/bin"
+export LD_LIBRARY_PATH="$LD_LIBRAYR_PATH:/home/user/clang/lib"
+. "$HOME/.cargo/env"
