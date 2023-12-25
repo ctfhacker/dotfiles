@@ -7,8 +7,8 @@ auto-pairs = false
 rulers = [100]
 true-color = true
 
-# [editor.lsp]
-# display-messages = true
+[editor.lsp]
+display-messages = true
 # display-inlay-hints = true
 
 [keys.normal]

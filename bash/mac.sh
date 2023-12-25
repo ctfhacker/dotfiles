@@ -6,5 +6,5 @@
 # I2C bus:       /dev/i2c-16
 # Serial number: VL82107A0588
 
-ddcutil --bus 15 setvcp 60 17
-ddcutil --bus 16 setvcp 60 17
+ddcutil --bus 3 setvcp 60 17
+ddcutil --bus 4 setvcp 60 17

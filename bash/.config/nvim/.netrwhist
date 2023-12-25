@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/user/workspace/brass_ai/src'
+let g:netrw_dirhist_2='/home/user/workspace/ismcts'
+let g:netrw_dirhist_1='/home/user/workspace/brass_ai'
+let g:netrw_dirhist_0='/home/user/workspace/brass_ai/src'
+let g:netrw_dirhist_9='/home/user/workspace/vim-lcov/plugin'
+let g:netrw_dirhist_8='/home/user/workspace/AudioProgrammingBook/Chapter1/01_midi_freq/src'
+let g:netrw_dirhist_7='/home/user/node_modules'
+let g:netrw_dirhist_6='/home/user/testcode/visor'
+let g:netrw_dirhist_5='/home/user/testcode/visor/kvmtest'
+let g:netrw_dirhist_4='/home/user/workspace/handmade_ferris/game/src'

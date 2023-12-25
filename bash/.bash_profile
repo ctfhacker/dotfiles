@@ -87,6 +87,7 @@ fi
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 setxkbmap -option "ctrl:nocaps"
+xmodmap ~/.Xmodmap
 
 source $HOME/.cargo/env
 
@@ -95,5 +96,7 @@ export PATH="$PATH:/mnt/c/Program Files/IDA 7.0"
 export PATH="$PATH:/home/user/clang/bin"
 export PATH="$PATH:/home/user/zig"
 export PATH="$PATH:/home/user/workspace/zls/zig-out/bin"
-export LD_LIBRARY_PATH="$LD_LIBRAYR_PATH:/home/user/clang/lib"
+export PATH="$PATH:/home/user/binaryninja"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/binaryninja"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/user/clang/lib"
 . "$HOME/.cargo/env"
